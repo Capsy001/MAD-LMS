@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">BetterLearn</string>
+    <string name="signin">SIGN IN</string>
+    <string name="signup">SIGN UP</string>
+    <string name="slogan">Best Place to Be In Touch With Your Education</string>
+    <string name="Login">LOGIN</string>
+    <string name="Email">EMAIL</string>
+    <string name="password">PASSWORD</string>
+    <string name="name">NAME</string>
+    <string name="retypepw">RE-TYPE PASSWORD</string>
+    <string name="forgotpw">Forgot Password?</string>
+    <string name="teacher">TEACHER</string>
+    <string name="student">STUDENT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile">Profile</string>
+    <string name="Institutes">Institutes</string>
+    <string name="mycourses">MyCourses</string>
+    <string name="announcements">Announcements</string>
+    <string name="assignments">Assignments</string>
+</resources>
