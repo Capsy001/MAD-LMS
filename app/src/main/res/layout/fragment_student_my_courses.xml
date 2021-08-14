@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/sliitCard"
+        android:id="@+id/assign2"
 
         android:layout_width="match_parent"
         android:layout_height="176dp"
@@ -164,7 +164,7 @@
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
-        app:layout_constraintTop_toBottomOf="@+id/sliitCard"
+        app:layout_constraintTop_toBottomOf="@+id/assign2"
         tools:layout_editor_absoluteX="15dp">
 
         <ImageView

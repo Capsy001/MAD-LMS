@@ -9,7 +9,6 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 
 public class StudentInstitutes extends Fragment implements View.OnClickListener {
@@ -23,7 +22,7 @@ public class StudentInstitutes extends Fragment implements View.OnClickListener 
 
 
         View myView = inflater.inflate(R.layout.fragment_student_institutes, container, false);
-        myButton = (View) myView.findViewById(R.id.sliitCard);
+        myButton = (View) myView.findViewById(R.id.assign2);
 
         myButton.setOnClickListener(this);
 

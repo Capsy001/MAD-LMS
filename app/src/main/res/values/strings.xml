@@ -108,6 +108,8 @@
     <string name="cn">Computer Networks</string>
     <string name="algo">Grade 11-Maths</string>
     <string name="courses">Courses</string>
+    <string name="selectf">Select File</string>
+    <string name="submitbtn">SUBMIT</string>
 
 
     <string-array name="assignments">
