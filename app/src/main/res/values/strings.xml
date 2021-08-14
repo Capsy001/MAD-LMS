@@ -29,4 +29,6 @@
     <string name="addcontent">AddContent</string>
     <string name="addcourses">AddCourses</string>
     <string name="addinstitute">AddInstitute</string>
+    <string name="Announcement1">CN lecture is cancelled</string>
+    <string name="ann1content">CN lecture for group 4.1 will be cancelled</string>
 </resources>

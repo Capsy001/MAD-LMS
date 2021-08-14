@@ -5,4 +5,10 @@
         <item>Database Management Systems</item>
         <item>Grade 11-Mathematics</item>
     </string-array>
+
+    <string-array name="institutes">
+        <item>SLIIT</item>
+        <item>NSBM</item>
+        <item>Trinity College</item>
+    </string-array>
 </resources>
