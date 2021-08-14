@@ -15,16 +15,17 @@
             android:layout_height="match_parent" >
 
             <Button
-                android:id="@+id/button12"
+                android:id="@+id/profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="changeFragment"
                 android:text="@string/profile"
                 android:textColor="@color/light_pink"
                 app:backgroundTint="@color/transparent" />
 
             <Button
-                android:id="@+id/button13"
+                android:id="@+id/institutes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -33,10 +34,11 @@
                 app:backgroundTint="@color/transparent" />
 
             <Button
-                android:id="@+id/button14"
+                android:id="@+id/mycourses"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="changeFragment"
                 android:text="@string/mycourses"
                 android:textColor="@color/light_pink"
                 app:backgroundTint="@color/transparent" />

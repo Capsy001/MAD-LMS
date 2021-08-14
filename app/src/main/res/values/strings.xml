@@ -26,4 +26,7 @@
     <string name="coursecontent2">CN-L1.pdf</string>
     <string name="cnconten4">CN-Meeting Link</string>
     <string name="link">https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZDVlZWNlMjItZDkzYS00Zjk3LWExNmUtMzJhYzBkOWEwNTc5%40thread.v2/0?context=%7b%22Tid%22%3a%2244e3cf94-19c9-4e32-96c3-14f5bf01391a%22%2c%22Oid%22%3a%22128e5aa3-1ce7-47c7-9da8-a251bd20f4b4%22%7d</string>
+    <string name="addcontent">AddContent</string>
+    <string name="addcourses">AddCourses</string>
+    <string name="addinstitute">AddInstitute</string>
 </resources>
