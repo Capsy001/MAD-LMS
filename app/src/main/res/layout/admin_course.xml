@@ -71,7 +71,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mycourse2"
         app:layout_constraintVertical_bias="0.078"
-        app:srcCompat="@drawable/course" />
+         />
 
     <ImageView
         android:id="@+id/imageView16"
@@ -134,8 +134,7 @@
         app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mycourse2"
-        app:layout_constraintVertical_bias="0.277"
-        app:srcCompat="@drawable/course" />
+        app:layout_constraintVertical_bias="0.277" />
 
     <ImageView
         android:id="@+id/imageView16_dup1"

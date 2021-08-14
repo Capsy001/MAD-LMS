@@ -33,27 +33,29 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
+        android:id="@+id/sliitCard"
 
         android:layout_width="match_parent"
         android:layout_height="176dp"
 
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="16dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp"
         app:cardElevation="10dp"
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner">
 
         <ImageView
             android:id="@+id/imageView82"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="119dp"
+            android:layout_height="129dp"
             tools:layout_conversion_absoluteHeight="128dp"
             tools:layout_conversion_absoluteWidth="128dp"
-            tools:src="@tools:sample/avatars" />
+            tools:src="@mipmap/announcement_foreground" />
 
         <TextView
             android:id="@+id/textView12"
@@ -77,7 +79,7 @@
 
             android:layout_marginStart="150dp"
             android:layout_marginLeft="150dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="60dp"
             android:text="@string/ann1content"
             android:textColor="@color/blue_link"
             android:textSize="20sp"
@@ -105,11 +107,11 @@
 
         <ImageView
             android:id="@+id/imageView8"
-            android:layout_width="97dp"
-            android:layout_height="133dp"
+            android:layout_width="wrap_content"
+            android:layout_height="128dp"
             tools:layout_conversion_absoluteHeight="128dp"
             tools:layout_conversion_absoluteWidth="128dp"
-            tools:src="@mipmap/profile_picture" />
+            tools:src="@mipmap/announcement_foreground" />
 
         <TextView
             android:id="@+id/textView1"
@@ -133,7 +135,7 @@
 
             android:layout_marginStart="150dp"
             android:layout_marginLeft="150dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="60dp"
             android:text="@string/ann1content"
             android:textColor="@color/blue_link"
             android:textSize="20sp"
@@ -153,16 +155,16 @@
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3"
+        app:layout_constraintTop_toBottomOf="@+id/sliitCard"
         tools:layout_editor_absoluteX="15dp">
 
         <ImageView
             android:id="@+id/imageView823"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="123dp"
+            android:layout_height="131dp"
             tools:layout_conversion_absoluteHeight="128dp"
             tools:layout_conversion_absoluteWidth="128dp"
-            tools:src="@tools:sample/avatars" />
+            tools:src="@mipmap/announcement_foreground" />
 
         <TextView
             android:id="@+id/textView123"
@@ -186,7 +188,7 @@
 
             android:layout_marginStart="150dp"
             android:layout_marginLeft="150dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="60dp"
             android:text="@string/ann1content"
             android:textColor="@color/blue_link"
             android:textSize="20sp"

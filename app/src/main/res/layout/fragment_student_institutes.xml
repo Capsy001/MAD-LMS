@@ -1,10 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StudentInstitutes">
 
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/Institutes"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="341dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:inputType="text"
+        android:queryHint="@string/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sliitCard"
+
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+
+        android:layout_marginTop="8dp"
+        android:onClick="onClick"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView">
+
+        <ImageView
+            android:id="@+id/imageView82"
+            android:layout_width="122dp"
+            android:layout_height="137dp"
+            tools:layout_conversion_absoluteHeight="128dp"
+            tools:layout_conversion_absoluteWidth="128dp"
+            tools:src="@mipmap/sliit" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="210dp"
+            android:layout_height="56dp"
 
 
-</FrameLayout>
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/sliit"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView45"
+
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sliitCard">
+
+        <ImageView
+            android:id="@+id/imageView822"
+            android:layout_width="131dp"
+            android:layout_height="137dp"
+            tools:layout_conversion_absoluteHeight="128dp"
+            tools:layout_conversion_absoluteWidth="128dp"
+            tools:src="@mipmap/nsbm_foreground" />
+
+        <TextView
+            android:id="@+id/textView122"
+            android:layout_width="210dp"
+            android:layout_height="56dp"
+
+
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/nsbm"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView45">
+
+        <ImageView
+            android:id="@+id/imageView8222"
+            android:layout_width="111dp"
+            android:layout_height="134dp"
+            tools:layout_conversion_absoluteHeight="128dp"
+            tools:layout_conversion_absoluteWidth="128dp"
+            tools:src="@mipmap/trinity" />
+
+        <TextView
+            android:id="@+id/textView1222"
+            android:layout_width="210dp"
+            android:layout_height="56dp"
+
+
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/college"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

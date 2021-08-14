@@ -44,7 +44,7 @@
                 app:backgroundTint="@color/transparent" />
 
             <Button
-                android:id="@+id/button15"
+                android:id="@+id/announcements"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -53,7 +53,7 @@
                 app:backgroundTint="@color/transparent" />
 
             <Button
-                android:id="@+id/button16"
+                android:id="@+id/assignments"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

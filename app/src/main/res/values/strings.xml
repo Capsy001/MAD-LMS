@@ -31,79 +31,10 @@
     <string name="addinstitute">AddInstitute</string>
     <string name="Announcement1">CN lecture is cancelled</string>
     <string name="ann1content">CN lecture for group 4.1 will be cancelled</string>
-
-    <!-- TODO: Chamuditha-->
-    <string name="sign_in">Sign In</string>
     <string name="search">Search</string>
-    <string name="sign_up">Sign Up</string>
-    <string name="email">Email</string>
-    <string name="repassword">Retype Password</string>
-    <string name="fg_password">Forgot Password</string>
-    <string name="forgot">Forgot Password</string>
-    <string name="reqpw">Get New Password</string>
-    <string name="aggrement">I agree to the Terms of Use and Privacy Policy.</string>
-    <string name="tagline">Best Place To Be In Touch With Your \n Education</string>
-    <string name="contactus">Contact Us</string>
-    <string name="tele">Telephones : +94 77 8174156</string>
-    <string name="fax">Fax Nos : +94 11 2 473645</string>
-    <string name="emailaddress">Email : edu2lms@tk.com</string>
-    <string name="rate">How do you like? \n Rate your experience.</string>
-    <string name="title_activity_mycourse">LMS</string>
-    <string name="tab_text_1">Profile</string>
-    <string name="tab_text_2">My Courses</string>
-    <string name="tab_text_3">Announcements</string>
-    <string name="tab_text_4">Assignments</string>
-    <string name="tab_text_5">Institutes</string>
-    <string name="student_name">Senavirathne KMCL</string>
-    <string name="course_title">Mobile App Development</string>
-    <string name="course_content">Android studios,Github</string>
-    <string name="Course_description">You will learn everything\nabout MAD</string>
-    <string name="Annou_title">Submit Your result sheets</string>
-    <string name="Annou_content">You need to send your\nlatest result sheet\nto the lecture in charge.</string>
-    <string name="Assig_title">MAD Assignment</string>
-    <string name="assig_cont">Deadline:08/29/2021\nSubmit before deadline</string>
-    <string name="submit_assignment">Submit Assignment</string>
-    <string name="select_file">Select File</string>
-    <string name="submit">Submit</string>
-    <string name="institutes">Institutes</string>
-    <string name="shs">SHS Institute</string>
-    <string name="entroll">Entroll</string>
-    <string name="entroll_key">Entrollment key</string>
-    <string name="add_content">Add Content</string>
-    <string name="add_course">Add Course</string>
-    <string name="add_institute">Add Institute</string>
-    <string name="edit_c">Edit Content</string>
-    <string name="description">Description</string>
-    <string name="select_files">Select Files</string>
-    <string name="add">Add</string>
-    <string name="add_c">Add Content</string>
-    <string name="c_name">Course Name</string>
-    <string name="add_instructor">Add Instructors</string>
-    <string name="name_instructor">Manushi Ekanayake</string>
-    <string name="add_i">Add Institute</string>
-    <string name="institute_name">Institute Name</string>
-    <string name="select_logo">Select Logo</string>
-    <string name="add_managers">Add Managers</string>
-    <string name="name_manager">Senanayake ABC</string>
-    <string name="add_annocement">Add New Announcement</string>
-    <string name="add_assignment">Add New Assignment</string>
-    <string name="deadline">Deadline</string>
-    <string name="title">Title</string>
-    <string name="shs1">Venus Institute</string>
-    <string name="shs2">Mars Institute</string>
-
-
-
-    <string-array name="assignments">
-        <item>Assignment Title</item>
-        <item>Reflective Journal</item>
-        <item>MAD assignment</item>
-    </string-array>
-
-    <string-array name="mycourses">
-        <item>Course Name</item>
-        <item>Mobile Application development</item>
-        <item>Ps</item>
-    </string-array>
-
+    <string name="sliit">SLIIT</string>
+    <string name="enrollment">EnrollmentKey</string>
+    <string name="enrollbtn">ENROLL</string>
+    <string name="nsbm">NSBM</string>
+    <string name="college">Trinity College</string>
 </resources>
