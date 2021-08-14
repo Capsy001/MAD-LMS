@@ -18,4 +18,199 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/CN"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="276dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="20dp"
+        android:entries="@array/courses"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11">
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_conversion_absoluteHeight="128dp"
+            tools:layout_conversion_absoluteWidth="128dp"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/content1"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/coursecontent2"
+            android:textColor="@color/blue_link"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <ImageView
+            android:id="@+id/imageView82"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_conversion_absoluteHeight="128dp"
+            tools:layout_conversion_absoluteWidth="128dp"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/content1"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/coursecontent2"
+            android:textColor="@color/blue_link"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+        <ImageView
+            android:id="@+id/imageView823"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_conversion_absoluteHeight="128dp"
+            tools:layout_conversion_absoluteWidth="128dp"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView123"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/cnconten4"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView133"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/link"
+            android:textColor="@color/blue_link"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="courses">
+        <item>Computer Networks</item>
+        <item>Database Management Systems</item>
+        <item>Grade 11-Mathematics</item>
+    </string-array>
+</resources>
