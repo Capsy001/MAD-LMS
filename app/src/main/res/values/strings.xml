@@ -110,6 +110,7 @@
     <string name="courses">Courses</string>
     <string name="selectf">Select File</string>
     <string name="submitbtn">SUBMIT</string>
+    <string name="submitAss">Submit Assignments</string>
 
 
     <string-array name="assignments">
