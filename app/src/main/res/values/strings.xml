@@ -18,4 +18,6 @@
     <string name="mycourses">MyCourses</string>
     <string name="announcements">Announcements</string>
     <string name="assignments">Assignments</string>
+    <string name="profilename">David Copperfield</string>
+    <string name="my_courses">My Courses</string>
 </resources>

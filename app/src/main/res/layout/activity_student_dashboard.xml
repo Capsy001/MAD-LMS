@@ -7,7 +7,7 @@
     tools:context=".StudentDashboard">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
+        android:id="@+id/tabsView"
         android:name="com.example.betterlearn.Tabs"
         android:layout_width="413dp"
         android:layout_height="66dp"
@@ -18,15 +18,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView2"
-        android:name="com.example.betterlearn.DashboardView"
+        android:id="@+id/fragmentContainerView"
+        android:name="com.example.betterlearn.DashboardProfile"
         android:layout_width="0dp"
-        android:layout_height="664dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="7dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/tabsView"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
