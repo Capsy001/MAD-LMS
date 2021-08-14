@@ -23,12 +23,12 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:text="@string/CN"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
@@ -36,7 +36,7 @@
         android:id="@+id/spinner"
         android:layout_width="276dp"
         android:layout_height="31dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:entries="@array/courses"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
+        android:id="@+id/sliitCard"
 
         android:layout_width="match_parent"
         android:layout_height="176dp"
@@ -60,11 +60,11 @@
 
         <ImageView
             android:id="@+id/imageView82"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="125dp"
+            android:layout_height="133dp"
             tools:layout_conversion_absoluteHeight="128dp"
             tools:layout_conversion_absoluteWidth="128dp"
-            tools:src="@tools:sample/avatars" />
+            tools:src="@drawable/megaphone" />
 
         <TextView
             android:id="@+id/textView12"
@@ -116,11 +116,11 @@
 
         <ImageView
             android:id="@+id/imageView8"
-            android:layout_width="97dp"
-            android:layout_height="133dp"
+            android:layout_width="118dp"
+            android:layout_height="128dp"
             tools:layout_conversion_absoluteHeight="128dp"
             tools:layout_conversion_absoluteWidth="128dp"
-            tools:src="@mipmap/profile_picture" />
+            tools:src="@drawable/university" />
 
         <TextView
             android:id="@+id/textView1"
@@ -164,16 +164,16 @@
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3"
+        app:layout_constraintTop_toBottomOf="@+id/sliitCard"
         tools:layout_editor_absoluteX="15dp">
 
         <ImageView
             android:id="@+id/imageView823"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="125dp"
+            android:layout_height="139dp"
             tools:layout_conversion_absoluteHeight="128dp"
             tools:layout_conversion_absoluteWidth="128dp"
-            tools:src="@tools:sample/avatars" />
+            tools:src="@drawable/university" />
 
         <TextView
             android:id="@+id/textView123"

@@ -31,4 +31,10 @@
     <string name="addinstitute">AddInstitute</string>
     <string name="Announcement1">CN lecture is cancelled</string>
     <string name="ann1content">CN lecture for group 4.1 will be cancelled</string>
+    <string name="search">Search</string>
+    <string name="sliit">SLIIT</string>
+    <string name="enrollment">EnrollmentKey</string>
+    <string name="enrollbtn">ENROLL</string>
+    <string name="nsbm">NSBM</string>
+    <string name="college">Trinity College</string>
 </resources>
