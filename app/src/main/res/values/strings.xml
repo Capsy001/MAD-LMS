@@ -17,7 +17,7 @@
     <string name="Institutes">Institutes</string>
     <string name="mycourses">MyCourses</string>
     <string name="announcements">Announcements</string>
-    <string name="assignments">Assignments</string>
+
     <string name="profilename">David Copperfield</string>
     <string name="my_courses">My Courses</string>
     <string name="coursetitle">Course Title</string>
@@ -97,8 +97,17 @@
     <string name="title">Title</string>
     <string name="shs1">Venus Institute</string>
     <string name="shs2">Mars Institute</string>
-
-
+    <string name="assignments">Assignments</string>
+    <string name="assig">Assignment1</string>
+    <string name="assign2">Assignment1.pdf</string>
+    <string name="assign3">CN-Assignment</string>
+    <string name="assign4">Project Submission</string>
+    <string name="assign5">Tutorial Submission</string>
+    <string name="getpw">RESET PASSWORD</string>
+    <string name="dms">Database Systems</string>
+    <string name="cn">Computer Networks</string>
+    <string name="algo">Grade 11-Maths</string>
+    <string name="courses">Courses</string>
 
 
     <string-array name="assignments">
@@ -112,5 +121,5 @@
         <item>Mobile Application development</item>
         <item>Ps</item>
     </string-array>
->>>>>>> Stashed changes
+    >>>>>>> Stashed changes
 </resources>
