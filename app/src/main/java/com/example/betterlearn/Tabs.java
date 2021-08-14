@@ -55,7 +55,7 @@ public class Tabs extends Fragment implements View.OnClickListener {
 
         if(view==myButton) {
 
-            fragment = new StudentMyCourses();
+            fragment = new NewAssignment();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.defaultDashboard, fragment);
