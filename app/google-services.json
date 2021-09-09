@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "228725928658",
+    "project_id": "learn-3da81",
+    "storage_bucket": "learn-3da81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228725928658:android:c5f3e509b497288835330b",
+        "android_client_info": {
+          "package_name": "com.example.betterlearn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228725928658-mh4cljufqhkr1fesgs6av9nbpkooaq5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJJXYbBrcjaSvvjCcW6Y4wag0pCtV7S7s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228725928658-mh4cljufqhkr1fesgs6av9nbpkooaq5k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
