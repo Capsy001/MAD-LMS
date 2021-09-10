@@ -1,13 +1,16 @@
 package models;
 
 
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Person {
 
-    private String name;
-    private String email;
-    private String password;
-    private boolean accounttype;
+    public String name;
+    public String email;
+    public String password;
+    public boolean accounttype;
+
+
 
     public Person(){}
 
