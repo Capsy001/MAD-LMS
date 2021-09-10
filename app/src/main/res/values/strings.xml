@@ -2,7 +2,7 @@
     <string name="app_name">BetterLearn</string>
     <string name="signin">SIGN IN</string>
     <string name="signup">SIGN UP</string>
-    <string name="slogan">Best Place to Be In Touch With Your Education</string>
+    <string name="slogan">Best Place Keep In Touch With Your Education</string>
     <string name="Login">LOGIN</string>
     <string name="Email">EMAIL</string>
     <string name="password">PASSWORD</string>
@@ -48,7 +48,7 @@
     <string name="forgot">Forgot Password</string>
     <string name="reqpw">Get New Password</string>
     <string name="aggrement">I agree to the Terms of Use and Privacy Policy.</string>
-    <string name="tagline">Best Place To Be In Touch With Your \n Education</string>
+    <string name="tagline">Best Place Keep In Touch With Your \n Education</string>
     <string name="contactus">Contact Us</string>
     <string name="tele">Telephones : +94 77 8174156</string>
     <string name="fax">Fax Nos : +94 11 2 473645</string>

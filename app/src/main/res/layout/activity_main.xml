@@ -4,76 +4,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
+
 
     <View
         android:id="@+id/view"
-        android:layout_width="374dp"
-        android:layout_height="178dp"
+        android:layout_width="343dp"
+        android:layout_height="470dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="128dp"
         android:layout_marginEnd="20dp"
+
+
         android:layout_marginRight="20dp"
-        android:background="@color/light_pink3"
-        app:circularflow_radiusInDP="10"
+
+        android:background="@color/white"
+        android:elevation="2dp"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <Button
-        android:id="@+id/signin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="143dp"
-        android:layout_marginLeft="143dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="63dp"
-        android:layout_marginRight="63dp"
-        android:onClick="signIn"
-        android:text="@string/signin"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view" />
 
-    <Button
-        android:id="@+id/signup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="143dp"
-        android:layout_marginLeft="143dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="63dp"
-        android:layout_marginRight="63dp"
-        android:onClick="signUp"
-        android:text="@string/signup"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/signin" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="239dp"
-        android:layout_height="84dp"
-        android:layout_marginTop="164dp"
-        android:gravity="center"
-        android:text="@string/slogan"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/signinM"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:width="100dp"
+        android:elevation="5dp"
+
+
+        android:onClick="signIn"
+        android:text="@string/signin"
+        android:textColor="@color/white"
+
+        app:layout_constraintBottom_toTopOf="@+id/signupM"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/signupM"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+
+        android:width="100dp"
+        android:onClick="signUp"
+        android:text="@string/signup"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.862"
+
+        android:elevation="2dp"/>
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="255dp"
         android:layout_height="244dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="84dp"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/signinM"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="331dp"
+        android:layout_height="121dp"
+        android:layout_marginBottom="44dp"
+        android:elevation="2dp"
+        android:fontFamily="@font/amaranth"
+        android:gravity="center"
+        android:shadowColor="@color/light_blue3"
+        android:shadowRadius="100"
+        android:text="@string/slogan"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/signinM"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,22 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".StudentDashboard">
 
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="97dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
+        android:background="@color/light_blue"
+        android:text="LOGOUT"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/tabsView"
         android:name="com.example.betterlearn.Tabs"
-        android:layout_width="413dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="410dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/defaultDashboard"
         android:name="com.example.betterlearn.DashboardProfile"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="411dp"
+        android:layout_height="644dp"
         android:layout_marginTop="7dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
