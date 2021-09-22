@@ -13,4 +13,5 @@
     <color name="blue_link">#002BFF</color>
     <color name="transparent">#00F44336</color>
     <color name="light_blue3">#D30091EA</color>
+    <color name="halfTransparent">#A9FFFFFF</color>
 </resources>

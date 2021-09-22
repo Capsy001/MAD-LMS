@@ -1,4 +1,4 @@
-package com.example.betterlearn;
+package StudentFragments;
 
 import android.os.Bundle;
 
@@ -10,8 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.betterlearn.R;
 
-public class StudentInstitutes extends Fragment implements View.OnClickListener {
+
+public class StudentAssignments extends Fragment implements View.OnClickListener {
 
     View myButton;
 
@@ -21,15 +23,17 @@ public class StudentInstitutes extends Fragment implements View.OnClickListener 
 
 
 
-        View myView = inflater.inflate(R.layout.fragment_student_institutes, container, false);
-        myButton = (View) myView.findViewById(R.id.assign2);
-
+        View myView = inflater.inflate(R.layout.fragment_student_assignments, container, false);
+        myButton = (View) myView.findViewById(R.id.cardView9);
         myButton.setOnClickListener(this);
+
+        return myView;
 
         // Inflate the layout for this fragment
 
-        return myView;
+
     }
+
 
     @Override
     public void onClick(View view) {
@@ -38,7 +42,7 @@ public class StudentInstitutes extends Fragment implements View.OnClickListener 
 
         if(view==myButton) {
 
-            fragment = new StudentInstitutesPage();
+            fragment = new StudentSubmit();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.defaultDashboard, fragment);
@@ -46,6 +50,5 @@ public class StudentInstitutes extends Fragment implements View.OnClickListener 
         }
 
     }
-
-
 }
+

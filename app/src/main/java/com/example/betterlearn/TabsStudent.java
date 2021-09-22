@@ -3,7 +3,6 @@ package com.example.betterlearn;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -12,8 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import StudentFragments.StudentAnnouncements;
+import StudentFragments.StudentAssignments;
+import StudentFragments.StudentInstitutes;
+import StudentFragments.StudentMyCourses;
 
-public class Tabs extends Fragment implements View.OnClickListener {
+
+public class TabsStudent extends Fragment implements View.OnClickListener {
 
     Button myButton;
     Button myButton1;
@@ -25,13 +29,13 @@ public class Tabs extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         View myView = inflater.inflate(R.layout.fragment_tabs, container, false);
-        myButton = (Button) myView.findViewById(R.id.mycourses);
+        myButton = (Button) myView.findViewById(R.id.mycoursesS);
 
-        myButton = (Button) myView.findViewById(R.id.mycourses);
-        myButton1 = (Button) myView.findViewById(R.id.profile);
-        myButton2 = (Button) myView.findViewById(R.id.institutes);
-        myButton3 = (Button) myView.findViewById(R.id.announcements);
-        myButton4 = (Button) myView.findViewById(R.id.assignments);
+        myButton = (Button) myView.findViewById(R.id.mycoursesS);
+        myButton1 = (Button) myView.findViewById(R.id.profileS);
+        myButton2 = (Button) myView.findViewById(R.id.institutesS);
+        myButton3 = (Button) myView.findViewById(R.id.announcementsS);
+        myButton4 = (Button) myView.findViewById(R.id.assignmentsS);
 
         myButton.setOnClickListener(this);
         myButton1.setOnClickListener(this);

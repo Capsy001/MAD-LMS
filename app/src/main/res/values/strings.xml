@@ -111,6 +111,9 @@
     <string name="selectf">Select File</string>
     <string name="submitbtn">SUBMIT</string>
     <string name="submitAss">Submit Assignments</string>
+    <string name="profileEmail">Email</string>
+    <string name="profileType">AccountType</string>
+    <string name="nullString" />
 
 
     <string-array name="assignments">

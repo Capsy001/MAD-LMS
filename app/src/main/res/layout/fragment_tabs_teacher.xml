@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TabsStudent">
+    tools:context=".TabsTeacher">
+
+
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -15,51 +17,60 @@
             android:layout_height="match_parent" >
 
             <Button
-                android:id="@+id/profileS"
+                android:id="@+id/profileT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="changeFragment"
+
                 android:text="@string/profile"
                 android:textColor="@color/light_blue"
-                app:backgroundTint="@color/transparent" />
+                app:backgroundTint="@color/transparent"
+                />
 
             <Button
-                android:id="@+id/institutesS"
+                android:id="@+id/mycoursesT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/Institutes"
                 android:textColor="@color/light_blue"
-                app:backgroundTint="@color/transparent" />
+                app:backgroundTint="@color/transparent"
+
+                />
 
             <Button
-                android:id="@+id/mycoursesS"
+                android:id="@+id/announcementsT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="changeFragment"
+
                 android:text="@string/mycourses"
                 android:textColor="@color/light_blue"
-                app:backgroundTint="@color/transparent" />
+                app:backgroundTint="@color/transparent"
+
+                />
 
             <Button
-                android:id="@+id/announcementsS"
+                android:id="@+id/assignmnetsT"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/announcements"
                 android:textColor="@color/light_blue"
-                app:backgroundTint="@color/transparent" />
+                app:backgroundTint="@color/transparent"
 
-            <Button
-                android:id="@+id/assignmentsS"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/assignments"
-                android:textColor="@color/light_blue"
-                app:backgroundTint="@color/transparent" />
+                />
+
+
+
+
+
+
+
+
+
         </LinearLayout>
     </HorizontalScrollView>
+
 </FrameLayout>
