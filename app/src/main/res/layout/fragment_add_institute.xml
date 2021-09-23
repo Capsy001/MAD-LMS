@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="TeacherFragments.addInstitute">
+    tools:context="TeacherMyCourses.addInstitute">
 
     <TextView
         android:id="@+id/textView32"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/institutenameAI"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_gravity="center"
@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/addbtnAI"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="62dp"
@@ -46,11 +46,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/logoimageviewAI"
         app:layout_constraintVertical_bias="0.187" />
 
     <Button
-        android:id="@+id/imageView24"
+        android:id="@+id/selectlogoAI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -58,10 +58,10 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/institutenameAI" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/logoimageviewAI"
         android:layout_width="128dp"
         android:layout_height="113dp"
         android:layout_marginTop="16dp"
@@ -69,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView24" />
+        app:layout_constraintTop_toBottomOf="@+id/selectlogoAI" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

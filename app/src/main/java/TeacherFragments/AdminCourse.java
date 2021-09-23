@@ -8,11 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.betterlearn.R;
 
-public class AdminCourse extends Fragment {
+public class AdminCourse extends Fragment implements View.OnClickListener {
 
 
     @Override
@@ -22,7 +23,14 @@ public class AdminCourse extends Fragment {
 
         View v1 = inflater.inflate(R.layout.admin_course,container,false);
 
+       // Button
+
 
         return v1;
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }

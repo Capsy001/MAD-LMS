@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.045" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/institutenameAI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -57,7 +57,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toBottomOf="@+id/institutenameAI"
         app:layout_constraintVertical_bias="0.071" />
 
     <ImageView
@@ -110,7 +110,7 @@
         app:layout_constraintVertical_bias="0.294" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/addbtnAI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add"

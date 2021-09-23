@@ -116,6 +116,8 @@
     <string name="nullString" />
     <string name="newcourse">NEWCOURSE</string>
     <string name="selectlogo">select logo</string>
+    <string name="coursename">Course Name</string>
+    <string name="selectinstitute">Select an Insitute!</string>
 
 
     <string-array name="assignments">
