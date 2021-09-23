@@ -14,6 +14,7 @@ import android.widget.Button;
 import StudentFragments.StudentAnnouncements;
 import StudentFragments.StudentInstitutes;
 import StudentFragments.StudentMyCourses;
+import TeacherFragments.AdminAnnouncement;
 import TeacherFragments.AdminCourse;
 
 
@@ -89,9 +90,13 @@ public class TabsTeacher extends Fragment implements View.OnClickListener {
 
 
         }
-
+        // Announcements
         if(view==myButton2) {
-
+            fragment = new AdminAnnouncement();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.defaultDashboard, fragment);
+            ft.commit();
 
         }
 
