@@ -33,7 +33,7 @@
         android:textSize="12sp"
         app:iconPadding="0dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/button8"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" /> //button edit
 
     <Button
         android:id="@+id/button9"
