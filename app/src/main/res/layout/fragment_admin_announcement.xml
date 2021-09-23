@@ -148,8 +148,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView21_dup2"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imageView25"
+    <Button
+        android:id="@+id/add_announcement"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -158,7 +158,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.946"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        android:background="@android:drawable/ic_menu_add" />
 
     <TextView
         android:id="@+id/textView36"
