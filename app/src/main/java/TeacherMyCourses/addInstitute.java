@@ -1,4 +1,4 @@
-package TeacherFragments;
+package TeacherMyCourses;
 
 import android.os.Bundle;
 

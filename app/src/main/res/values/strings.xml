@@ -114,6 +114,8 @@
     <string name="profileEmail">Email</string>
     <string name="profileType">AccountType</string>
     <string name="nullString" />
+    <string name="newcourse">NEWCOURSE</string>
+    <string name="selectlogo">select logo</string>
 
 
     <string-array name="assignments">

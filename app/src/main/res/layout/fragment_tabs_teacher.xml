@@ -28,7 +28,7 @@
                 />
 
             <Button
-                android:id="@+id/mycoursesT"
+                android:id="@+id/institutesT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -44,19 +44,19 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
 
-                android:text="@string/mycourses"
+                android:text="@string/announcements"
                 android:textColor="@color/light_blue"
                 app:backgroundTint="@color/transparent"
 
                 />
 
             <Button
-                android:id="@+id/assignmnetsT"
+                android:id="@+id/assignmentsT"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/announcements"
+                android:text="@string/assignments"
                 android:textColor="@color/light_blue"
                 app:backgroundTint="@color/transparent"
 

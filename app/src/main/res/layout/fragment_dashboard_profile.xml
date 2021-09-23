@@ -66,7 +66,7 @@
         android:layout_width="319dp"
         android:layout_height="155dp"
         android:layout_marginTop="92dp"
-        android:background="@color/light_pink3"
+        android:background="@color/light_blue4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_profile" />
@@ -76,7 +76,7 @@
         android:layout_width="319dp"
         android:layout_height="155dp"
         android:layout_marginTop="23dp"
-        android:background="@color/light_pink3"
+        android:background="@color/light_blue4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view48" />

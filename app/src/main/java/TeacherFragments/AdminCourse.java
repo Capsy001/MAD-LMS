@@ -21,10 +21,7 @@ public class AdminCourse extends Fragment {
         // Inflate the layout for this fragment
 
         View v1 = inflater.inflate(R.layout.admin_course,container,false);
-        Spinner spinner = (Spinner) v1.findViewById(R.id.mycourse2);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.mycourses, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        spinner.setAdapter(adapter);
+
 
         return v1;
     }
