@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/addcontentAI"
         android:layout_width="0dp"
         android:layout_height="43dp"
         android:layout_marginEnd="7dp"
@@ -32,11 +32,11 @@
         android:textColor="@color/white"
         android:textSize="12sp"
         app:iconPadding="0dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button8"
+        app:layout_constraintBaseline_toBaselineOf="@+id/newcourseAI"
         app:layout_constraintEnd_toEndOf="parent" /> //button edit
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/addinstituteAI"
         android:layout_width="0dp"
         android:layout_height="43dp"
         android:layout_marginStart="7dp"
@@ -49,12 +49,12 @@
         android:textColor="@color/white"
         android:textSize="12sp"
         app:iconPadding="0dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button8"
-        app:layout_constraintEnd_toStartOf="@+id/button8"
+        app:layout_constraintBaseline_toBaselineOf="@+id/newcourseAI"
+        app:layout_constraintEnd_toStartOf="@+id/newcourseAI"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/newcourseAI"
         android:layout_width="0dp"
         android:layout_height="43dp"
         android:layout_marginStart="140dp"
@@ -68,14 +68,14 @@
         android:textColor="@color/white"
         android:textSize="12sp"
         app:iconPadding="0dp"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
+        app:layout_constraintEnd_toStartOf="@+id/addcontentAI"
         app:layout_constraintHorizontal_bias="0.997"
-        app:layout_constraintStart_toEndOf="@+id/button9"
+        app:layout_constraintStart_toEndOf="@+id/addinstituteAI"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
+        android:id="@+id/containerAI"
         android:name="TeacherMyCourses.addInstitute"
         android:layout_width="400dp"
         android:layout_height="599dp"
@@ -83,7 +83,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
+        app:layout_constraintTop_toBottomOf="@+id/newcourseAI"
+
+
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

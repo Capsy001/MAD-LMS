@@ -68,14 +68,14 @@ public class Login extends AppCompatActivity {
         fAuth=FirebaseAuth.getInstance();
         fStore=FirebaseFirestore.getInstance();
 
-        if(fAuth.getCurrentUser() != null){
-
-            Intent intent1=new Intent(this, StudentDashboard.class);
-            startActivity(intent1);
-
-            finish();
-
-        }
+//        if(fAuth.getCurrentUser() != null){
+//
+//            Intent intent1=new Intent(this, StudentDashboard.class);
+//            startActivity(intent1);
+//
+//            return;
+//
+//        }
 
 
 

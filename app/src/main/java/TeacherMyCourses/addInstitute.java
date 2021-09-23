@@ -58,8 +58,13 @@ public class addInstitute extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        if (container != null) {
+            container.removeAllViews();
+        }
+
         // Inflate the layout for this fragment
         View myView= inflater.inflate(R.layout.fragment_add_institute, container, false);
+        container.clearDisappearingChildren();
 
 
         Button selectLogo = myView.findViewById(R.id.selectlogoAI);
