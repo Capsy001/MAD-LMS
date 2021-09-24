@@ -52,7 +52,7 @@ public class newAnnouncement extends Fragment implements View.OnClickListener {
         EditText Title = (EditText) getView().findViewById(R.id.editTextTextPersonName3);
         EditText Description = (EditText) getView().findViewById(R.id.editTextTextMultiLine3);
         Spinner Institutes = (Spinner) getView().findViewById(R.id.institute);
-        Log.d(TAG, "newAnnouncement:" + Institutes.getText().toString());
+        Log.d(TAG, "newAnnouncement:" + Institutes.getSelectedItem().toString());
     }
 
 }
