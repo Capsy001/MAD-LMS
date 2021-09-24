@@ -2,9 +2,9 @@
 #Table Of Contents
 ## Some Of Our Problems
 ###### [How to add image for button in android?](#how-to-add-image-for-button-in-android)
-###### [findViewById in Fragment]()
-###### [How to Handle onClick in Fragments]()
-###### [How to get Spinner selected item value to string?]()
+###### [findViewById in Fragment](#findviewbyid-in-fragment-1)
+###### [How to Handle onClick in Fragments](#how-to-handle-onclick-in-fragments-1)
+###### [How to get Spinner selected item value to string?](#how-to-get-spinner-selected-item-value-to-string-1)
 
 ### How to add image for button in android?
 #### Stackoverflow: `https://stackoverflow.com/questions/4209582/how-to-add-image-for-button-in-android`
