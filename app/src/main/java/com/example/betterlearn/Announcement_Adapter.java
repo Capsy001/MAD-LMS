@@ -10,16 +10,18 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import TeacherFragments.AdminAnnouncement;
 import models.Announcement;
 
 public class Announcement_Adapter extends ArrayAdapter<Announcement> {
 
 
-    public Announcement_Adapter(@NonNull Context context, ArrayList<Announcement> dataModalArrayList) {
+    public Announcement_Adapter(@NonNull FragmentActivity context, ArrayList<Announcement> dataModalArrayList) {
         super(context, 0, dataModalArrayList);
     }
 

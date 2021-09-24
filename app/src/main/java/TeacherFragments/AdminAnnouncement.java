@@ -2,6 +2,7 @@ package TeacherFragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,14 +13,21 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.betterlearn.Announcement_Adapter;
 import com.example.betterlearn.DashboardProfile;
 import com.example.betterlearn.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import models.Announcement;
 
@@ -99,14 +107,14 @@ public class AdminAnnouncement extends Fragment implements View.OnClickListener 
 
                                 // after getting this list we are passing
                                 // that list to our object class.
-                                DataModal dataModal = d.toObject(DataModal.class);
+                                Announcement dataModal = d.toObject(Announcement.class);
 
                                 // after getting data from Firebase
                                 // we are storing that data in our array list
                                 dataModalArrayList.add(dataModal);
                             }
                             // after that we are passing our array list to our adapter class.
-                            CoursesGVAdapter adapter = new CoursesGVAdapter(MainActivity.this, dataModalArrayList);
+                            Announcement_Adapter adapter = new Announcement_Adapter(getActivity(), dataModalArrayList);
 
                             // after passing this array list
                             // to our adapter class we are setting
@@ -114,7 +122,7 @@ public class AdminAnnouncement extends Fragment implements View.OnClickListener 
                             coursesGV.setAdapter(adapter);
                         } else {
                             // if the snapshot is empty we are displaying a toast message.
-                            Toast.makeText(MainActivity.this, "No data found in Database", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "No data found in Database", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -122,7 +130,7 @@ public class AdminAnnouncement extends Fragment implements View.OnClickListener 
             public void onFailure(@NonNull Exception e) {
                 // we are displaying a toast message
                 // when we get any error from Firebase.
-                Toast.makeText(MainActivity.this, "Fail to load data..", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Fail to load data..", Toast.LENGTH_SHORT).show();
             }
         });
     }
