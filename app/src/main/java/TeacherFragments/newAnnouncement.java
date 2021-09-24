@@ -85,7 +85,7 @@ public class newAnnouncement extends Fragment implements View.OnClickListener {
             userID=fAuth.getCurrentUser().getUid();
 
             //database document reference
-            DocumentReference documentReference= fStore.collection("announcements").document(userID);   //Collection="announce"
+            DocumentReference documentReference= fStore.collection("announcements").document();   //Collection="announce"
 
             Map<String, Object> announce= new HashMap<>();
             announce.put("title", rTitle);
