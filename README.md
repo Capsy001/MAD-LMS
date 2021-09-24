@@ -5,6 +5,7 @@
 ###### [findViewById in Fragment](#findviewbyid-in-fragment-1)
 ###### [How to Handle onClick in Fragments](#how-to-handle-onclick-in-fragments-1)
 ###### [How to get Spinner selected item value to string?](#how-to-get-spinner-selected-item-value-to-string-1)
+###### [EditText clear text on first focus](#EditText-clear-text-on-first-focus)
 
 ### How to add image for button in android?
 #### Stackoverflow: `https://stackoverflow.com/questions/4209582/how-to-add-image-for-button-in-android`
@@ -17,3 +18,6 @@
 
 ### How to get Spinner selected item value to string?
 #### Stackoverflow: `https://stackoverflow.com/questions/10331854/how-to-get-spinner-selected-item-value-to-string`
+
+### EditText clear text on first focus
+#### Stackoverflow: `https://stackoverflow.com/questions/13022501/edittext-clear-text-on-first-focus-android/13022696`

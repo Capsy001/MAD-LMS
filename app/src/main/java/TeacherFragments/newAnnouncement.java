@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,10 +50,25 @@ public class newAnnouncement extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v){
+        //firebase Authentication initialize
+        fAuth=FirebaseAuth.getInstance();
+        //firestore databse initialize
+        fStore=FirebaseFirestore.getInstance();
+
         EditText Title = (EditText) getView().findViewById(R.id.editTextTextPersonName3);
         EditText Description = (EditText) getView().findViewById(R.id.editTextTextMultiLine3);
         Spinner Institutes = (Spinner) getView().findViewById(R.id.institute);
         Log.d(TAG, "newAnnouncement:" + Institutes.getSelectedItem().toString());
+
+        String rTitle=Title.getText().toString().trim();
+        String rDescription=Description.getText().toString();
+        String rInstitutes=Institutes.getSelectedItem().toString();
+
+        if(TextUtils.isEmpty(rTitle)){
+            Title.setError("Title should not be empty");
+            return;
+
+        }
     }
 
 }
