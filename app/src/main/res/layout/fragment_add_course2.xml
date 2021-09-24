@@ -11,13 +11,13 @@
         android:id="@+id/addbtnAC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="111dp"
+        android:layout_marginTop="72dp"
         android:text="@string/add"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text" />
+        app:layout_constraintTop_toBottomOf="@+id/enrollkeyAC" />
 
     <TextView
         android:id="@+id/textView17"
@@ -47,22 +47,22 @@
         android:elevation="2dp"/>
 
     <EditText
-        android:id="@+id/text"
+        android:id="@+id/enrollkeyAC"
         android:layout_width="235dp"
         android:layout_height="46dp"
         android:layout_gravity="center"
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="text"
-        android:text="@string/coursename"
+        android:text="@string/enrollment"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/coursenameAC" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/selectedAC"
         android:layout_width="wrap_content"
         android:layout_height="47dp"
         android:layout_marginTop="40dp"
@@ -75,17 +75,17 @@
         app:layout_constraintTop_toBottomOf="@+id/spinnerAC" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/coursenameAC"
         android:layout_width="235dp"
         android:layout_height="43dp"
         android:layout_gravity="center"
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="text"
-        android:text="@string/enrollment"
+        android:text="@string/coursename"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintTop_toBottomOf="@+id/selectedAC" />
 </androidx.constraintlayout.widget.ConstraintLayout>

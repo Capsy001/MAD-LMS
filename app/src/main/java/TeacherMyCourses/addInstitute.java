@@ -106,10 +106,11 @@ public class addInstitute extends Fragment implements View.OnClickListener {
 
 
                         //Add institute to database
-                        DocumentReference documentReference= fStore.collection("users").document(userID).collection("institutes").document(instituteNameAI);
+                        DocumentReference documentReference= fStore.collection("institutes").document();
 
                         Map<String, Object> institute= new HashMap<>();
                         institute.put("InstituteName", instituteNameAI);
+                        institute.put("UserID", userID);
 
 
                         //insert to database
@@ -118,7 +119,7 @@ public class addInstitute extends Fragment implements View.OnClickListener {
                             public void onSuccess(Void unused) {
                                 Log.d(TAG, "Institute Created "+instituteNameAI);
 
-                                //code
+                                //alert box
                                 new AlertDialog.Builder(addInstitute.getContext())
                                         .setTitle("Success!")
                                         .setMessage("Institute Created. Now add some Courses!")
@@ -136,7 +137,7 @@ public class addInstitute extends Fragment implements View.OnClickListener {
                                         // A null listener allows the button to dismiss the dialog and take no further action.
                                         .setIcon(android.R.drawable.checkbox_on_background)
                                         .show();
-                                //code
+                                //alert
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override

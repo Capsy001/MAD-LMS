@@ -2,6 +2,8 @@ package TeacherFragments;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentContainer;
+import androidx.fragment.app.FragmentContainerView;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -16,6 +18,7 @@ import android.widget.Spinner;
 import com.example.betterlearn.R;
 
 import StudentFragments.StudentMyCourses;
+import TeacherMyCourses.addContent;
 import TeacherMyCourses.addCourse;
 import TeacherMyCourses.addInstitute;
 
@@ -51,6 +54,10 @@ public class AdminCourse extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+
+        FragmentContainerView fl = getView().findViewById(R.id.containerAI);
+        fl.removeAllViews();
+
         Fragment fragment;
 
         if(view==addCourse) {
@@ -73,11 +80,11 @@ public class AdminCourse extends Fragment implements View.OnClickListener {
 
         if(view==addContent) {
 
-//            fragment = new addCourse();
-//            FragmentManager fm = getFragmentManager();
-//            FragmentTransaction ft = fm.beginTransaction();
-//            ft.replace(R.id.containerAI, fragment);
-//            ft.commit();
+            fragment = new addContent();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.containerAI, fragment);
+            ft.commit();
         }
 
 

@@ -69,6 +69,8 @@ public class TabsTeacher extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
+
+
         Fragment fragment;
 
         if(view==myButton) {
