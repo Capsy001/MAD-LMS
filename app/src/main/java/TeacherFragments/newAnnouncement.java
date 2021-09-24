@@ -2,6 +2,7 @@ package TeacherFragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -18,8 +19,14 @@ import android.widget.Toast;
 
 import com.example.betterlearn.R;
 import com.example.betterlearn.SignUp;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class newAnnouncement extends Fragment implements View.OnClickListener {
@@ -68,6 +75,34 @@ public class newAnnouncement extends Fragment implements View.OnClickListener {
             Title.setError("Title should not be empty");
             return;
 
+        }
+
+        if(TextUtils.isEmpty(rDescription)){
+            Title.setError("Title should not be empty");
+            return;
+
+        }else{
+            userID=fAuth.getCurrentUser().getUid();
+
+            //database document reference
+            DocumentReference documentReference= fStore.collection("announcements").document(userID);   //Collection="announce"
+
+            Map<String, Object> announce= new HashMap<>();
+            announce.put("title", rTitle);
+            announce.put("description", rDescription);
+            announce.put("institutes", rInstitutes);
+
+            documentReference.set(announce).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void unused) {
+                    Log.d(TAG, "User profile created for "+userID);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.d(TAG, "OnFailure: "+e.toString());
+                }
+            });
         }
     }
 
