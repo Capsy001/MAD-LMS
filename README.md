@@ -1,7 +1,7 @@
 # MAD-LMS
 #Table Of Contents
 ## Some Of Our Problems
-###### [How to add image for button in android?](/MAD-LMS#how-to-add-image-for-button-in-android)
+###### [How to add image for button in android?](#how-to-add-image-for-button-in-android)
 ###### [findViewById in Fragment]()
 ###### [How to Handle onClick in Fragments]()
 ###### [How to get Spinner selected item value to string?]()
