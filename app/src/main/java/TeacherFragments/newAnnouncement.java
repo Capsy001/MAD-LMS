@@ -91,16 +91,21 @@ public class newAnnouncement extends Fragment implements View.OnClickListener {
             announce.put("title", rTitle);
             announce.put("description", rDescription);
             announce.put("institutes", rInstitutes);
+            announce.put("user", userID);
 
             documentReference.set(announce).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void unused) {
                     Log.d(TAG, "User profile created for "+userID);
+                    Title.getText().clear();
+                    Description.getText().clear();
+                    Toast.makeText(getActivity(), "Announcement Created", Toast.LENGTH_SHORT).show();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     Log.d(TAG, "OnFailure: "+e.toString());
+                    Toast.makeText(getActivity(), "Error!.", Toast.LENGTH_SHORT).show();
                 }
             });
         }

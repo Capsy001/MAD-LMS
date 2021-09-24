@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import com.example.betterlearn.DashboardProfile;
 import com.example.betterlearn.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -39,6 +41,9 @@ public class AdminAnnouncement extends Fragment implements View.OnClickListener 
     GridView coursesGV;
     ArrayList<Announcement> dataModalArrayList;
     FirebaseFirestore db;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    String userID;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -92,7 +97,11 @@ public class AdminAnnouncement extends Fragment implements View.OnClickListener 
     private void loadDatainGridView() {
         // below line is use to get data from Firebase
         // firestore using collection in android.
-        db.collection("announcements").get()
+        fAuth= FirebaseAuth.getInstance();
+        //firestore databse initialize
+        fStore=FirebaseFirestore.getInstance();
+        userID=fAuth.getCurrentUser().getUid();
+        db.collection("announcements").whereEqualTo("user", userID).get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -122,7 +131,7 @@ public class AdminAnnouncement extends Fragment implements View.OnClickListener 
                             coursesGV.setAdapter(adapter);
                         } else {
                             // if the snapshot is empty we are displaying a toast message.
-                            Toast.makeText(getActivity(), "No data found in Database", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "No Announcements in Database", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
