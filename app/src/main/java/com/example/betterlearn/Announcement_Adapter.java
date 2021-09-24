@@ -43,11 +43,13 @@ public class Announcement_Adapter extends ArrayAdapter<Announcement> {
 
         // initializing our UI components of list view item.
         TextView Titlelist = listitemView.findViewById(R.id.textView21_dup1);
+        TextView Descriptionlist = listitemView.findViewById(R.id.textView22_dup1);
 
         // after initializing our items we are
         // setting data to our view.
         // below line is use to set data to our text view.
         Titlelist.setText(dataModal.getTitle());
+        Descriptionlist.setText(dataModal.getDescription());
 
 
         // below line is use to add item

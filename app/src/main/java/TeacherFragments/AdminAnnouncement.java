@@ -92,7 +92,7 @@ public class AdminAnnouncement extends Fragment implements View.OnClickListener 
     private void loadDatainGridView() {
         // below line is use to get data from Firebase
         // firestore using collection in android.
-        db.collection("Data").get()
+        db.collection("announcements").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
