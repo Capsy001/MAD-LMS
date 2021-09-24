@@ -5,19 +5,23 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.betterlearn.R;
+import com.example.betterlearn.SignUp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
-public class newAnnouncement extends Fragment {
+public class newAnnouncement extends Fragment implements View.OnClickListener {
 
     public static final String TAG="TAG";
     FirebaseAuth fAuth;
@@ -36,14 +40,19 @@ public class newAnnouncement extends Fragment {
         adapter1.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner.setAdapter(adapter1);
 
+        Button b = (Button) v.findViewById(R.id.button6);
+        b.setOnClickListener(this);
 
         return v;
     }
 
+
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-
+    public void onClick(View v){
+        EditText Title = (EditText) getView().findViewById(R.id.editTextTextPersonName3);
+        EditText Description = (EditText) getView().findViewById(R.id.editTextTextMultiLine3);
+        Spinner Institutes = (Spinner) getView().findViewById(R.id.institute);
+        Log.d(TAG, "newAnnouncement:" + Institutes.getText().toString());
     }
+
 }
