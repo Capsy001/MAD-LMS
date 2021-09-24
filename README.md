@@ -7,6 +7,8 @@
 ###### [How to get Spinner selected item value to string?](#how-to-get-spinner-selected-item-value-to-string-1)
 ###### [EditText clear text on first focus](#EditText-clear-text-on-first-focus-1)
 ###### [Use Toast inside Fragment](#Use-Toast-inside-Fragment-1)
+###### [How to query documents which contains a sent parameter in Firestore?](#How-to-query-documents-which-contains-a-sent-parameter-in-Firestore-1)
+###### [Firebase Cloud Firestore Query whereEqualTo for reference](#Firebase-Cloud-Firestore-Query-whereEqualTo-for-reference-1)
 
 ### How to add image for button in android?
 #### Stackoverflow: `https://stackoverflow.com/questions/4209582/how-to-add-image-for-button-in-android`
@@ -25,3 +27,9 @@
 
 ### Use Toast inside Fragment
 #### Stackoverflow: `https://stackoverflow.com/questions/10770055/use-toast-inside-fragment`
+
+### How to query documents which contains a sent parameter in Firestore?
+#### Stackoverflow: `https://stackoverflow.com/questions/46687714/how-to-query-documents-which-contains-a-sent-parameter-in-firestore`
+
+### Firebase Cloud Firestore Query whereEqualTo for reference
+#### Stackoverflow: `https://stackoverflow.com/questions/51054114/firebase-cloud-firestore-query-whereequalto-for-reference`
