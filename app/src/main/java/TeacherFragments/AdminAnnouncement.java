@@ -10,18 +10,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.TextView;
 
 import com.example.betterlearn.DashboardProfile;
 import com.example.betterlearn.R;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+
+import models.Announcement;
 
 
 public class AdminAnnouncement extends Fragment implements View.OnClickListener  {
 
     Button Add_announcement;
     TextView Add_announcement_text;
+    GridView coursesGV;
+    ArrayList<Announcement> dataModalArrayList;
+    FirebaseFirestore db;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,6 +44,15 @@ public class AdminAnnouncement extends Fragment implements View.OnClickListener 
         Add_announcement.setOnClickListener(this);
         Add_announcement_text.setOnClickListener(this);
 
+        coursesGV = myView.findViewById(R.id.admin_announcemets_sec);
+        dataModalArrayList = new ArrayList<>();
+
+        // initializing our variable for firebase
+        // firestore and getting its instance.
+        db = FirebaseFirestore.getInstance();
+        // here we are calling a method
+        // to load data in our list view.
+        loadDatainGridView();
         return myView;
     }
 
@@ -61,5 +79,51 @@ public class AdminAnnouncement extends Fragment implements View.OnClickListener 
 
 
         }
+    }
+
+    private void loadDatainGridView() {
+        // below line is use to get data from Firebase
+        // firestore using collection in android.
+        db.collection("Data").get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        // after getting the data we are calling on success method
+                        // and inside this method we are checking if the received
+                        // query snapshot is empty or not.
+                        if (!queryDocumentSnapshots.isEmpty()) {
+                            // if the snapshot is not empty we are hiding our
+                            // progress bar and adding our data in a list.
+                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                            for (DocumentSnapshot d : list) {
+
+                                // after getting this list we are passing
+                                // that list to our object class.
+                                DataModal dataModal = d.toObject(DataModal.class);
+
+                                // after getting data from Firebase
+                                // we are storing that data in our array list
+                                dataModalArrayList.add(dataModal);
+                            }
+                            // after that we are passing our array list to our adapter class.
+                            CoursesGVAdapter adapter = new CoursesGVAdapter(MainActivity.this, dataModalArrayList);
+
+                            // after passing this array list
+                            // to our adapter class we are setting
+                            // our adapter to our list view.
+                            coursesGV.setAdapter(adapter);
+                        } else {
+                            // if the snapshot is empty we are displaying a toast message.
+                            Toast.makeText(MainActivity.this, "No data found in Database", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                // we are displaying a toast message
+                // when we get any error from Firebase.
+                Toast.makeText(MainActivity.this, "Fail to load data..", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
