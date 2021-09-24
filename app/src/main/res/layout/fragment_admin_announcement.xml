@@ -64,47 +64,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView21"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imageView13_dup1"
-        android:layout_width="75dp"
-        android:layout_height="92dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.507"
-        app:srcCompat="@drawable/megaphone" />
 
-    <TextView
-        android:id="@+id/textView21_dup1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Annou_title"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView13_dup1"
-        app:layout_constraintTop_toBottomOf="@+id/textView20"
-        app:layout_constraintVertical_bias="0.366" />
-
-    <TextView
-        android:id="@+id/textView22_dup1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="@string/Annou_content"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.013"
-        app:layout_constraintStart_toEndOf="@+id/imageView13_dup1"
-        app:layout_constraintTop_toBottomOf="@+id/textView21_dup1"
-        app:layout_constraintVertical_bias="0.005" />
 
     <ImageView
         android:id="@+id/imageView13_dup2"
@@ -147,6 +107,12 @@
         app:layout_constraintStart_toEndOf="@+id/imageView13_dup2"
         app:layout_constraintTop_toBottomOf="@+id/textView21_dup2"
         app:layout_constraintVertical_bias="0.0" />
+
+    <GridView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/admin_announcemets_sec"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/add_announcement"
