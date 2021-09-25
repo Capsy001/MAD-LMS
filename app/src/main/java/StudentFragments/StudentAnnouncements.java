@@ -248,3 +248,28 @@ public class StudentAnnouncements extends Fragment implements View.OnClickListen
 
     }
 } */
+
+
+/*    public void onClick(View view) {
+        Fragment fragment;
+
+        if(view==Add_announcement) {
+
+            fragment = new newAnnouncement();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.defaultDashboard, fragment);
+            ft.commit();
+        }
+
+        if(view==Add_announcement_text) {
+
+            fragment = new newAnnouncement();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.defaultDashboard, fragment);
+            ft.commit();
+
+
+        }
+    } */
