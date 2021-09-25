@@ -62,7 +62,7 @@
             android:text="@string/submit"
             android:textColor="@color/blue_link"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold" /> //text view
 
     </androidx.cardview.widget.CardView>
 
