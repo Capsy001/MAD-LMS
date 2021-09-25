@@ -37,3 +37,8 @@
 
 ### How to Create Dynamic GridView in Android using Firebase Firestore?
 #### Stackoverflow: `https://www.geeksforgeeks.org/how-to-create-dynamic-gridview-in-android-using-firebase-firestore`
+
+### PDF FILE UPLOAD : https://www.geeksforgeeks.org/how-to-upload-pdf-files-in-firebase-storage-in-android/
+### PDF FILE DLOAD : https://www.geeksforgeeks.org/how-to-retrieve-pdf-file-from-firebase-realtime-database-in-android/
+
+### Scrollable List View : https://guides.codepath.com/android/Using-an-ArrayAdapter-with-ListView

@@ -1,5 +1,6 @@
 package TeacherMyCourses;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
@@ -13,7 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,7 +45,7 @@ public class addContent extends Fragment {
     FirebaseAuth fAuth= FirebaseAuth.getInstance();
     FirebaseFirestore fStore= FirebaseFirestore.getInstance();
 
-
+    ProgressDialog dialog2;
 
     String selected_institute;
     String selected_course;
@@ -73,6 +77,24 @@ public class addContent extends Fragment {
 
         //clear overlapping fragments
         container.clearDisappearingChildren();
+
+        ProgressDialog dialog = new ProgressDialog(getActivity());
+        dialog.setMessage("Loading..");
+        dialog.show();
+
+        //clear radio button selection
+        RadioGroup radioGroup=root.findViewById(R.id.radioGroup);
+        radioGroup.clearCheck();
+
+        //Hide button and edit text until radio button checked
+        Button select=root.findViewById(R.id.selectAD);
+        select.setVisibility(View.GONE);
+
+        EditText link_description=root.findViewById(R.id.link_descriptionAD);
+        link_description.setVisibility(View.GONE);
+
+
+
 
         //getting institute list from the database
         String userID= fAuth.getCurrentUser().getUid();
@@ -107,11 +129,16 @@ public class addContent extends Fragment {
 
                     institutes.setAdapter(itemsAdapter);
 
+                    dialog.dismiss();
+
                     //set selected listener
                     institutes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+                            dialog2 = new ProgressDialog(getActivity());
+                            dialog2.setMessage("Loading..");
+                            dialog2.show();
 
                             //get selected spinner item
                             selected_institute=institutes.getSelectedItem().toString();
@@ -133,6 +160,97 @@ public class addContent extends Fragment {
         //---Retrieve institutes
 
 
+
+
+
+
+
+        //get course content to upload to database
+        Button addContent               =root.findViewById(R.id.addAD);//ADD button
+        select                          =root.findViewById(R.id.selectAD);
+        EditText title                  =root.findViewById(R.id.titleAD);
+        EditText title_description      =root.findViewById(R.id.title_descriptionAD);
+        RadioButton link_radio          =root.findViewById(R.id.linkAD);
+        RadioButton pdf_radio           =root.findViewById(R.id.pdfAD);
+        RadioButton description_radio   =root.findViewById(R.id.descriptionAD);
+        link_description                =root.findViewById(R.id.link_descriptionAD);
+        radioGroup                      =root.findViewById(R.id.radioGroup);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+                Button select=root.findViewById(R.id.selectAD);
+                EditText link_description=root.findViewById(R.id.link_descriptionAD);
+
+                if(link_radio.isChecked())
+                {
+                    link_description.setText("Link");
+                    select.setVisibility(View.GONE);
+                    link_description.setVisibility(View.VISIBLE);
+                }
+                else if(pdf_radio.isChecked())
+                {
+
+                    select.setVisibility(View.VISIBLE);
+                    link_description.setVisibility(View.GONE);
+
+                }
+                else if(description_radio.isChecked())
+                {
+                    link_description.setText("Description");
+                    select.setVisibility(View.GONE);
+                    link_description.setVisibility(View.VISIBLE);
+
+                }
+
+
+            }
+        });
+
+
+        addContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Button select=root.findViewById(R.id.selectAD);
+                EditText link_description=root.findViewById(R.id.link_descriptionAD);
+
+                if(link_radio.isChecked())
+                {
+                    if(link_description.getText().toString().isEmpty()){
+
+                        link_description.setError("Link Cannot be empty!");
+                        return;
+
+                    }
+
+                }
+                else if(pdf_radio.isChecked())
+                {
+
+                    //implementtttttttttttttttttttttttttttttt
+                    //If selected file == null
+                    //dialog error
+
+                }
+                else if(description_radio.isChecked())
+                {
+                    if(link_description.getText().toString().isEmpty()){
+
+                        link_description.setError("Description Cannot be empty!");
+                        return;
+
+                    }
+
+                }
+
+
+                String titleAD=title.getText().toString();
+                String title_descriptionAD=title_description.getText().toString();
+
+            }
+        });
 
 
 
@@ -209,6 +327,9 @@ public class addContent extends Fragment {
 
 
                     courses.setAdapter(itemsAdapter2);
+                    dialog2.dismiss();
+
+
 
                     //set selected listener
                     courses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

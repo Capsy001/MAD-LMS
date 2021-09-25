@@ -10,10 +10,10 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="5dp"
         android:text="@string/my_courses"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:text="@string/CN"
         android:textColor="@color/black"
         android:textSize="24sp"
@@ -36,173 +36,13 @@
         android:id="@+id/spinner"
         android:layout_width="276dp"
         android:layout_height="31dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round_border"
         android:entries="@array/courses"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/assign2"
-
-        android:layout_width="match_parent"
-        android:layout_height="176dp"
-
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintTop_toBottomOf="@+id/textView11">
-
-        <ImageView
-            android:id="@+id/imageView82"
-            android:layout_width="125dp"
-            android:layout_height="133dp"
-            tools:layout_conversion_absoluteHeight="128dp"
-            tools:layout_conversion_absoluteWidth="128dp"
-            tools:src="@drawable/megaphone" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/content1"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="40dp"
-            android:text="@string/coursecontent2"
-            android:textColor="@color/blue_link"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="118dp"
-            android:layout_height="128dp"
-            tools:layout_conversion_absoluteHeight="128dp"
-            tools:layout_conversion_absoluteWidth="128dp"
-            tools:src="@drawable/university" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/content1"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="40dp"
-            android:text="@string/coursecontent2"
-            android:textColor="@color/blue_link"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-
-        android:layout_width="match_parent"
-        android:layout_height="176dp"
-
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintTop_toBottomOf="@+id/assign2"
-        tools:layout_editor_absoluteX="15dp">
-
-        <ImageView
-            android:id="@+id/imageView823"
-            android:layout_width="125dp"
-            android:layout_height="139dp"
-            tools:layout_conversion_absoluteHeight="128dp"
-            tools:layout_conversion_absoluteWidth="128dp"
-            tools:src="@drawable/university" />
-
-        <TextView
-            android:id="@+id/textView123"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/cnconten4"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView133"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="40dp"
-            android:text="@string/link"
-            android:textColor="@color/blue_link"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

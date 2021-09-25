@@ -30,6 +30,7 @@
         android:inputType="textPersonName"
         android:text="@string/institute_name"
         android:textAlignment="center"
+        android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

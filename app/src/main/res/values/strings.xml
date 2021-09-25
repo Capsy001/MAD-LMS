@@ -118,6 +118,10 @@
     <string name="selectlogo">select logo</string>
     <string name="coursename">Course Name</string>
     <string name="selectinstitute">Select an Insitute!</string>
+    <string name="content">Content Type</string>
+    <string name="link_1">Link</string>
+    <string name="pdf">PDF File</string>
+    <string name="select">SELECT</string>
 
 
     <string-array name="assignments">

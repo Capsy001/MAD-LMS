@@ -1,6 +1,7 @@
 package TeacherMyCourses;
 
 import android.app.LauncherActivity;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
@@ -81,6 +82,10 @@ public class addCourse extends Fragment {
         //clear overlapping fragments
         container.clearDisappearingChildren();
 
+        ProgressDialog dialog = new ProgressDialog(getActivity());
+        dialog.setMessage("Loading..");
+        dialog.show();
+
 
         //getting institute list from the database
         String userID= fAuth.getCurrentUser().getUid();
@@ -123,6 +128,8 @@ public class addCourse extends Fragment {
 
 
                     institutes.setAdapter(itemsAdapter);
+
+                    dialog.dismiss();
 
                     //set selected listener
                     institutes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

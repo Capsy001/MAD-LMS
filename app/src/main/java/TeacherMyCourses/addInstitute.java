@@ -1,6 +1,7 @@
 package TeacherMyCourses;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -50,6 +51,8 @@ public class addInstitute extends Fragment implements View.OnClickListener {
     FirebaseFirestore fStore;
     StorageReference storageReference;
 
+    ProgressDialog dialog;
+
     Uri imageUri=null;    //URI of the selected Image
 
 
@@ -91,6 +94,10 @@ public class addInstitute extends Fragment implements View.OnClickListener {
                     return;
                 }
 
+                dialog = new ProgressDialog(getActivity());
+                dialog.setMessage("Loading..");
+                dialog.show();
+
                 fAuth= FirebaseAuth.getInstance();  //Firebase authentication
                 fStore= FirebaseFirestore.getInstance();    //Firebase firestore database
                 storageReference= FirebaseStorage.getInstance().getReference(); //Firebase storage
@@ -118,6 +125,8 @@ public class addInstitute extends Fragment implements View.OnClickListener {
                             @Override
                             public void onSuccess(Void unused) {
                                 Log.d(TAG, "Institute Created "+instituteNameAI);
+
+                                dialog.dismiss();
 
                                 //alert box
                                 new AlertDialog.Builder(addInstitute.getContext())
