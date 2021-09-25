@@ -252,10 +252,9 @@ public class StudentAnnouncements extends Fragment implements View.OnClickListen
 
 /*    public void onClick(View view) {
         Fragment fragment;
-
         if(view==Add_announcement) {
 
-            fragment = new newAnnouncement();
+            fragment = new view();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.defaultDashboard, fragment);
@@ -264,7 +263,7 @@ public class StudentAnnouncements extends Fragment implements View.OnClickListen
 
         if(view==Add_announcement_text) {
 
-            fragment = new newAnnouncement();
+            fragment = new view();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.defaultDashboard, fragment);
