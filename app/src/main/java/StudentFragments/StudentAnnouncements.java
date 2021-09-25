@@ -76,3 +76,22 @@ public class StudentAnnouncements extends Fragment {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
         });
     }*/
+
+
+
+/*    @Override
+    public void onClick(View view) {
+
+        Fragment fragment;
+
+        if(view==myButton) {
+
+            fragment = new A();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.defaultDashboard, fragment);
+            ft.commit();
+        }
+
+    }
+} */
