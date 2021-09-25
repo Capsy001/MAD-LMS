@@ -71,10 +71,7 @@ public class StudentAnnouncements extends Fragment {
 
         Button logout=findViewById(R.id.logout_dashboard);
 
-        logout.setOnClickListener(view -> {
-            FirebaseAuth.getInstance().signOut();   //logout from firebase authentication
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-        });
+
     }*/
 
 
@@ -86,7 +83,7 @@ public class StudentAnnouncements extends Fragment {
 
         if(view==myButton) {
 
-            fragment = new A();
+            fragment = new Annoucement();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.defaultDashboard, fragment);
