@@ -21,10 +21,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinner1123"
         android:layout_width="276dp"
         android:layout_height="31dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:entries="@array/institutes"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,169 +32,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/assign2"
-
-        android:layout_width="match_parent"
-        android:layout_height="176dp"
-
-        android:layout_marginTop="16dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner">
-
-        <ImageView
-            android:id="@+id/imageView82"
-            android:layout_width="119dp"
-            android:layout_height="129dp"
-            tools:layout_conversion_absoluteHeight="128dp"
-            tools:layout_conversion_absoluteWidth="128dp"
-            tools:src="@mipmap/announcement_foreground" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/Announcement1"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="60dp"
-            android:text="@string/ann1content"
-            android:textColor="@color/blue_link"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-
-        android:layout_width="match_parent"
+    <GridView
+        android:id="@+id/std_announcemets_sec"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:padding="10px"
+        android:paddingLeft="10px"
+        android:paddingTop="10px"
+        android:paddingRight="10px"
+        android:paddingBottom="10px"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="wrap_content"
-            android:layout_height="128dp"
-            tools:layout_conversion_absoluteHeight="128dp"
-            tools:layout_conversion_absoluteWidth="128dp"
-            tools:src="@mipmap/announcement_foreground" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="221dp"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/Announcement1"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="60dp"
-            android:text="@string/ann1content"
-            android:textColor="@color/blue_link"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-
-        android:layout_width="match_parent"
-        android:layout_height="176dp"
-
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintTop_toBottomOf="@+id/assign2"
-        tools:layout_editor_absoluteX="15dp">
-
-        <ImageView
-            android:id="@+id/imageView823"
-            android:layout_width="123dp"
-            android:layout_height="131dp"
-            tools:layout_conversion_absoluteHeight="128dp"
-            tools:layout_conversion_absoluteWidth="128dp"
-            tools:src="@mipmap/announcement_foreground" />
-
-        <TextView
-            android:id="@+id/textView123"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/Announcement1"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView133"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="60dp"
-            android:text="@string/ann1content"
-            android:textColor="@color/blue_link"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toBottomOf="@+id/spinner1123"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_marginBaseline="10dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
