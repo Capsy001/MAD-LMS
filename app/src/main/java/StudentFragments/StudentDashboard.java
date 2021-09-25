@@ -101,7 +101,7 @@ public class StudentDashboard extends AppCompatActivity {
 
 }
 
-public class adminCourse extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+/*public class adminCourse extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
