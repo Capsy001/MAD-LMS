@@ -56,6 +56,13 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
         app:layout_constraintVertical_bias="0.059" />
 
+          /*        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine3"
+        app:layout_constraintVertical_bias="0.095" */
+
     <Button
         android:id="@+id/button6"
         android:layout_width="wrap_content"
@@ -79,4 +86,8 @@
         app:layout_constraintVertical_bias="0.061"
         tools:ignore="MissingConstraints" />
 
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
