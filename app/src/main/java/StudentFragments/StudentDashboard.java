@@ -35,6 +35,16 @@ public class StudentDashboard extends AppCompatActivity {
     FirebaseFirestore fStore;
     String userID;
 
+
+/*public class Studentprofile extends AppCompatActivity {
+
+        public static final String TAG="TAG";
+        Boolean accType;
+
+        FirebaseAuth fAuth;
+        FirebaseFirestore fStore;
+        String userID; */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
