@@ -21,10 +21,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinner1123"
         android:layout_width="276dp"
         android:layout_height="31dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:entries="@array/institutes"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,6 +36,11 @@
         android:id="@+id/std_announcemets_sec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center_horizontal"
         android:padding="10px"
         android:paddingLeft="10px"
@@ -45,11 +50,11 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner"
-        app:layout_constraintVertical_bias="0.133" />
-
+        app:layout_constraintTop_toBottomOf="@+id/spinner1123"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_marginBaseline="10dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
