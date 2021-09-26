@@ -15,6 +15,7 @@ import StudentFragments.StudentAnnouncements;
 import StudentFragments.StudentInstitutes;
 import StudentFragments.StudentMyCourses;
 import TeacherFragments.AdminAnnouncement;
+import TeacherFragments.AdminAssignments2;
 import TeacherFragments.AdminCourse;
 
 
@@ -103,7 +104,11 @@ public class TabsTeacher extends Fragment implements View.OnClickListener {
         }
 
         if(view==myButton3) {
-
+            fragment = new AdminAssignments2();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.defaultDashboard, fragment);
+            ft.commit();
 
         }
 

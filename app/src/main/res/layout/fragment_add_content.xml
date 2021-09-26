@@ -69,7 +69,6 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="textMultiLine"
-        android:maxLength="30"
         android:selectAllOnFocus="true"
         android:text="@string/description"
         android:textAlignment="center"

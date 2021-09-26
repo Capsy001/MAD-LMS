@@ -122,6 +122,10 @@
     <string name="link_1">Link</string>
     <string name="pdf">PDF File</string>
     <string name="select">SELECT</string>
+    <string name="addnew">add new</string>
+    <string name="all">all</string>
+    <string name="selectpdf">select pdf</string>
+    <string name="newassignment">New Assignment</string>
 
 
     <string-array name="assignments">
