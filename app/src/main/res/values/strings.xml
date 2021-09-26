@@ -95,6 +95,8 @@
     <string name="add_annocement">Add New Announcement</string>
     <string name="add_assignment">Add New Assignment</string>
     <string name="deadline">Deadline</string>
+    <string name="details">Details</string>
+    <string name="details_submission">You need to email assignment with your id to:\n ass@betterleran.com</string>
     <string name="title">Title</string>
     <string name="shs1">Venus Institute</string>
     <string name="shs2">Mars Institute</string>
