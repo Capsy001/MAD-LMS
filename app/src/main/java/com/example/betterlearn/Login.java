@@ -37,7 +37,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login); /* overide */
     }
 
     public void login(View view){
@@ -61,7 +61,7 @@ public class Login extends AppCompatActivity {
             lPassword.setError("Password cannot be empty");
             return;
 
-        }
+        }  /*validation */
 
 
 
