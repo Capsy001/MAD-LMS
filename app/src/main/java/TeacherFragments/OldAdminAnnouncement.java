@@ -746,4 +746,253 @@ public class adminCourse extends AppCompatActivity implements AdapterView.OnItem
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
-} */
+} package com.example.lms;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+public class Institutes extends Fragment {
+public class Institutes extends Fragment implements View.OnClickListener {
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.institutes,container,false);
+        View v = inflater.inflate(R.layout.institutes,container,false);
+
+        Button b = (Button) v.findViewById(R.id.button3);
+        b.setOnClickListener(this);
+        return v;
+    }
+
+
+
+
+
+
+
+
+public class Institutes extends Fragment {
+public class Institutes extends Fragment implements View.OnClickListener {
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.institutes,container,false);
+        View v = inflater.inflate(R.layout.institutes,container,false);
+
+        Button b = (Button) v.findViewById(R.id.button3);
+        b.setOnClickListener(this);
+        return v;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button3:
+                Intent intent = new Intent(getActivity(), Institute_entrol.class);
+                startActivity(intent);
+                break;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button3:
+                Intent intent = new Intent(getActivity(), Institute_entrol.class);
+                startActivity(intent);
+                break;
+        @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button3:
+                Intent intent = new Intent(getActivity(), Institute_entrol.class);
+                startActivity(intent);
+                break;
+        }
+    }
+     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.add_course);
+
+        Spinner spinner = (Spinner) findViewById(R.id.planets_spinner);
+        spinner.setOnItemSelectedListener(this);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.institutes, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+}
+  Spinner b = (Spinner) myView.findViewById(R.id.spinner1123);
+        GridView gridview = (GridView) myView.findViewById(R.id.std_announcemets_sec);
+        b.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView adapter, View v, int i, long lng) {
+                dataModalArrayList.clear();
+                gridview.setAdapter(null);
+                Spinner Institutes = (Spinner) getView().findViewById(R.id.spinner1123);
+                rInstitutes=Institutes.getSelectedItem().toString();
+                rInstitutes =  adapter.getItemAtPosition(i).toString();
+
+                fStore=FirebaseFirestore.getInstance();
+                db.collection("announcements").whereEqualTo("institutes", rInstitutes).get()
+                        .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            @Override
+                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                // after getting the data we are calling on success method
+                                // and inside this method we are checking if the received
+                                // query snapshot is empty or not.
+                                if (!queryDocumentSnapshots.isEmpty()) {
+                                    // if the snapshot is not empty we are hiding our
+                                    // progress bar and adding our data in a list.
+                                    List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                    for (DocumentSnapshot d : list) {
+
+                                        // after getting this list we are passing
+                                        // that list to our object class.
+                                        Announcement dataModal = d.toObject(Announcement.class);
+
+                                        // after getting data from Firebase
+                                        // we are storing that data in our array list
+                                        dataModalArrayList.add(dataModal);
+                                    }
+                                    // after that we are passing our array list to our adapter class.
+                                    Announcement_Adapter adapter = new Announcement_Adapter(getActivity(), dataModalArrayList);
+
+                                    // after passing this array list
+                                    // to our adapter class we are setting
+                                    // our adapter to our list view.
+                                    coursesGV.setAdapter(adapter);
+                                } else {
+                                    // if the snapshot is empty we are displaying a toast message.
+                                    Toast.makeText(getActivity(), "No Announcements in Database", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // we are displaying a toast message
+                        // when we get any error from Firebase.
+                        Toast.makeText(getActivity(), "Fail to load data..", Toast.LENGTH_SHORT).show();
+                    }
+                });
+ @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.add_course);
+
+        Spinner spinner = (Spinner) findViewById(R.id.planets_spinner);
+        spinner.setOnItemSelectedListener(this);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.institutes, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+}
+  Spinner b = (Spinner) myView.findViewById(R.id.spinner1123);
+        GridView gridview = (GridView) myView.findViewById(R.id.std_announcemets_sec);
+        b.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView adapter, View v, int i, long lng) {
+                dataModalArrayList.clear();
+                gridview.setAdapter(null);
+                Spinner Institutes = (Spinner) getView().findViewById(R.id.spinner1123);
+                rInstitutes=Institutes.getSelectedItem().toString();
+                rInstitutes =  adapter.getItemAtPosition(i).toString();
+
+                fStore=FirebaseFirestore.getInstance();
+                db.collection("announcements").whereEqualTo("institutes", rInstitutes).get()
+                        .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            @Override
+                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                // after getting the data we are calling on success method
+                                // and inside this method we are checking if the received
+                                // query snapshot is empty or not.
+                                if (!queryDocumentSnapshots.isEmpty()) {
+                                    // if the snapshot is not empty we are hiding our
+                                    // progress bar and adding our data in a list.
+                                    List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                    for (DocumentSnapshot d : list) {
+
+                                        // after getting this list we are passing
+                                        // that list to our object class.
+                                        Announcement dataModal = d.toObject(Announcement.class);
+
+                                        // after getting data from Firebase
+                                        // we are storing that data in our array list
+                                        dataModalArrayList.add(dataModal);
+                                    }
+                                    // after that we are passing our array list to our adapter class.
+                                    Announcement_Adapter adapter = new Announcement_Adapter(getActivity(), dataModalArrayList);
+
+                                    // after passing this array list
+                                    // to our adapter class we are setting
+                                    // our adapter to our list view.
+                                    coursesGV.setAdapter(adapter);
+                                } else {
+                                    // if the snapshot is empty we are displaying a toast message.
+                                    Toast.makeText(getActivity(), "No Announcements in Database", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // we are displaying a toast message
+                        // when we get any error from Firebase.
+                        Toast.makeText(getActivity(), "Fail to load data..", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+}*/
