@@ -24,7 +24,7 @@ public class StudentAssignments extends Fragment implements View.OnClickListener
 
 
         View myView = inflater.inflate(R.layout.fragment_student_assignments, container, false);
-        myButton = (View) myView.findViewById(R.id.cardView9);
+        myButton = (View) myView.findViewById(R.id.frameLayout5);
         myButton.setOnClickListener(this);
 
         return myView;
