@@ -30,7 +30,7 @@ import java.util.List;
 import models.Announcement;
 
 
-public class StudentAnnouncements extends Fragment implements View.OnClickListener  {
+public class StudentAnnouncements extends Fragment  {
     GridView coursesGV;
     ArrayList<Announcement> dataModalArrayList;
     FirebaseFirestore db;
@@ -41,7 +41,6 @@ public class StudentAnnouncements extends Fragment implements View.OnClickListen
                              Bundle savedInstanceState) {
         View myView = inflater.inflate(R.layout.fragment_student_announcements, container, false);
         // Inflate the layout for this fragment
-        Toast.makeText(getActivity(), "No Announcements in Database" , Toast.LENGTH_LONG).show();
         coursesGV = myView.findViewById(R.id.std_announcemets_sec);
         dataModalArrayList = new ArrayList<>();
 
@@ -173,10 +172,7 @@ public class StudentAnnouncements extends Fragment implements View.OnClickListen
     }
 
 
-    @Override
-    public void onClick(View view) {
 
-    }
 }
 
 
