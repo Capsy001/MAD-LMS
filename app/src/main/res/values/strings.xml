@@ -129,6 +129,8 @@
     <string name="all">all</string>
     <string name="selectpdf">select pdf</string>
     <string name="newassignment">New Assignment</string>
+    <string name="downloadpdf">download PDF</string>
+    <string name="Deadline">Deadline: 12/12/2021</string>
 
 
     <string-array name="assignments">
