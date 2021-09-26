@@ -112,3 +112,50 @@ public class newAnnouncement extends Fragment implements View.OnClickListener {
     }
 
 }
+/*public class AdminAnnouncement extends Fragment implements View.OnClickListener  {
+
+    Button Add_announcement;
+    TextView Add_announcement_text;
+    GridView coursesGV;
+    ArrayList<Announcement> dataModalArrayList;
+    FirebaseFirestore db;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    String userID;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View myView = inflater.inflate(R.layout.fragment_admin_announcement, container, false);
+
+        // Inflate the layout for this fragment
+        Add_announcement = (Button) myView.findViewById(R.id.add_announcement);
+
+
+        Add_announcement.setOnClickListener(this);
+
+
+        coursesGV = myView.findViewById(R.id.admin_announcemets_sec);
+        dataModalArrayList = new ArrayList<>();
+
+        // initializing our variable for firebase
+        // firestore and getting its instance.
+        db = FirebaseFirestore.getInstance();
+        // here we are calling a method
+        // to load data in our list view.
+        loadDatainGridView();
+        return myView;
+    }
+
+    @Override
+    public void onClick(View view) {
+        Fragment fragment;
+
+
+
+            fragment = new newAnnouncement();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.defaultDashboard, fragment);
+            ft.commit();
+*/
