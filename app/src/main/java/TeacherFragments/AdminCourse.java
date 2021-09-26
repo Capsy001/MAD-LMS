@@ -90,3 +90,26 @@ public class AdminCourse extends Fragment implements View.OnClickListener {
 
     }
 }
+/*@Override
+    public void onClick(View view) {
+
+        Fragment fragment;
+
+        if(view==myButton) {
+
+            fragment = new NewAssignment();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.fragmentContainerASS, fragment);
+            ft.commit();
+        }
+
+        if(view==myButton1) {
+
+            //for all assignments
+
+
+        }
+
+    }
+}*/
