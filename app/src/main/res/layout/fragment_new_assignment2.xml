@@ -6,7 +6,7 @@
     tools:context="TeacherAssignments.NewAssignment">
 
     <Spinner
-        android:id="@+id/spinner5"
+        android:id="@+id/spinnerASS"
         android:layout_width="fill_parent"
         android:layout_height="35dp"
         android:layout_marginTop="5dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <Spinner
-        android:id="@+id/spinner6"
+        android:id="@+id/spinner2ASS"
         android:layout_width="fill_parent"
         android:layout_height="35dp"
         android:layout_marginTop="5dp"
@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner5" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerASS" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -48,7 +48,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner6" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner2ASS" />
 
     <EditText
         android:id="@+id/editTextTextMultiLine"

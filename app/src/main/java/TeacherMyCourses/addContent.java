@@ -113,11 +113,14 @@ public class addContent extends Fragment {
                     List<String> items=new ArrayList<String>() {};
                     for(DocumentSnapshot document : listDocument){
 
-                        String institute=document.get("InstituteName").toString();
-                        items.add(institute);
-                        //getting data to insert into spinner
+                        //selecting user's institutes
+                        if(document.get("UserID").toString().equals(userID)) {
 
+                            String institute = document.get("InstituteName").toString();
+                            items.add(institute);
+                            //getting data to insert into spinner
 
+                        }
                     }
 
                     //setting up the spinner
