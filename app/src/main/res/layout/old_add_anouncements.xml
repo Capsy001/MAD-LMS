@@ -8,19 +8,7 @@
     <?xml version="1.0" encoding="utf-8"?>
 
 
-<TextView
-android:id="@+id/textView20"
-android:layout_height="wrap_content"
-android:layout_width="wrap_content"
-android:text="@string/tab_text_3"
-android:textColor="@color/design_default_color_on_secondary"
-android:textSize="35dp"
-app:layout_constraintBottom_toBottomOf="parent"
-app:layout_constraintEnd_toEndOf="parent"
-app:layout_constraintHorizontal_bias="0.496"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintTop_toTopOf="parent"
-app:layout_constraintVertical_bias="0.112" />
+
 
 <ImageView
     android:id="@+id/imageView13"
