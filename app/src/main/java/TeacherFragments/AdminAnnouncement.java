@@ -52,10 +52,10 @@ public class AdminAnnouncement extends Fragment implements View.OnClickListener 
 
         // Inflate the layout for this fragment
         Add_announcement = (Button) myView.findViewById(R.id.add_announcement);
-        Add_announcement_text = (TextView) myView.findViewById(R.id.textView36);
+
 
         Add_announcement.setOnClickListener(this);
-        Add_announcement_text.setOnClickListener(this);
+
 
         coursesGV = myView.findViewById(R.id.admin_announcemets_sec);
         dataModalArrayList = new ArrayList<>();
@@ -73,16 +73,7 @@ public class AdminAnnouncement extends Fragment implements View.OnClickListener 
     public void onClick(View view) {
         Fragment fragment;
 
-        if(view==Add_announcement) {
 
-            fragment = new newAnnouncement();
-            FragmentManager fm = getFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.defaultDashboard, fragment);
-            ft.commit();
-        }
-
-        if(view==Add_announcement_text) {
 
             fragment = new newAnnouncement();
             FragmentManager fm = getFragmentManager();
@@ -91,7 +82,7 @@ public class AdminAnnouncement extends Fragment implements View.OnClickListener 
             ft.commit();
 
 
-        }
+
     }
 
     private void loadDatainGridView() {

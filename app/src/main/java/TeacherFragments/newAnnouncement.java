@@ -44,8 +44,8 @@ public class newAnnouncement extends Fragment implements View.OnClickListener {
         View v =  inflater.inflate(R.layout.fragment_new_announcement, container, false);
 
         Spinner spinner = (Spinner) v.findViewById(R.id.institute);
-        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this.getActivity(), R.array.institutes, android.R.layout.simple_spinner_item);
-        adapter1.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this.getActivity(), R.array.institutes, R.layout.spinner_selected);
+        adapter1.setDropDownViewResource(R.layout.spinner_dropdown);
         spinner.setAdapter(adapter1);
 
         Button b = (Button) v.findViewById(R.id.button6);
