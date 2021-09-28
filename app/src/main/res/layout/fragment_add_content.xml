@@ -27,6 +27,10 @@
         android:background="@drawable/round_border"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
+
+        android:scrollbarSize="4dp"
+        android:scrollbarThumbVertical="@color/material500_lightblue"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +44,10 @@
         android:background="@drawable/round_border"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
+
+        android:scrollbarSize="4dp"
+        android:scrollbarThumbVertical="@color/material500_lightblue"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +63,7 @@
         android:inputType="text"
         android:selectAllOnFocus="true"
         android:textAlignment="center"
-        android:text="@string/title"
+        android:hint="@string/title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/courseAD" />
@@ -70,7 +78,7 @@
         android:gravity="center"
         android:inputType="textMultiLine"
         android:selectAllOnFocus="true"
-        android:text="@string/description"
+        android:hint="@string/description"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -94,7 +102,6 @@
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:text="@string/link_1"
-            android:textIsSelectable="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -109,7 +116,7 @@
             android:id="@+id/descriptionAD"
             android:layout_width="match_parent"
             android:layout_height="37dp"
-            android:text="@string/description" />
+            android:text="@string/text" />
     </RadioGroup>
 
     <TextView
@@ -148,7 +155,7 @@
         android:ems="10"
         android:inputType="textMultiLine|textPersonName"
         android:selectAllOnFocus="true"
-        android:text="@string/link_1"
+        android:hint="@string/link_1"
         android:textAlignment="center"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,6 +1,7 @@
 package StudentFragments;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -38,6 +39,8 @@ import models.Institute;
 
 public class StudentInstitutes extends Fragment implements View.OnClickListener {
 
+    public static FragmentManager fragmentManager;
+
     public static final String TAG="TAG";
     FirebaseAuth fAuth=FirebaseAuth.getInstance();
     FirebaseFirestore fStore=FirebaseFirestore.getInstance();
@@ -60,6 +63,8 @@ public class StudentInstitutes extends Fragment implements View.OnClickListener 
         View myView = inflater.inflate(R.layout.fragment_student_institutes, container, false);
         // Inflate the layout for this fragment
 
+        fragmentManager=getFragmentManager();
+
         dialog = new ProgressDialog(getActivity());
         dialog.setMessage("Loading..");
         dialog.show();
@@ -71,7 +76,7 @@ public class StudentInstitutes extends Fragment implements View.OnClickListener 
             public void onComplete(@NonNull @NotNull Task<QuerySnapshot> task) {
 
                 if (task.isSuccessful()){
-
+                    items.clear();
                     List<DocumentSnapshot> listDocument = task.getResult().getDocuments();
 
 
@@ -81,8 +86,10 @@ public class StudentInstitutes extends Fragment implements View.OnClickListener 
 
                         String institute=document.get("InstituteName").toString();
                         String user_id=document.get("UserID").toString();
+                        String image=document.get("downloadURL").toString();
 
-                        Institute newInstitute=new Institute(institute, user_id);
+                        Institute newInstitute=new Institute(institute, user_id, image);
+
 
                         items.add(newInstitute);
                         //add all object items to a list
@@ -123,5 +130,9 @@ public class StudentInstitutes extends Fragment implements View.OnClickListener 
 
     }
 
+    @Override
+    public void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
+    }
 }

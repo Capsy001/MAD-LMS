@@ -161,6 +161,8 @@ public class addCourse extends Fragment {
             @Override
             public void onClick(View view) {
 
+
+
                 String cName =courseName.getText().toString();
                 String eKey =enrollKey.getText().toString();
 
@@ -200,10 +202,12 @@ public class addCourse extends Fragment {
                                     public void onClick(DialogInterface dialog, int which) {
 
                                         EditText editCourseName=getView().findViewById(R.id.coursenameAC);
-                                        editCourseName.setText("Add Another Course");
+                                        editCourseName.getText().clear();
+                                        editCourseName.setHint("Add Another Course");
 
                                         EditText editEnrollKey=getView().findViewById(R.id.enrollkeyAC);
-                                        editEnrollKey.setText("EnrollmentKey");
+                                        editEnrollKey.getText().clear();
+                                        editEnrollKey.setHint("EnrollmentKey");
 
 
                                     }

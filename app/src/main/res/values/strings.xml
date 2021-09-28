@@ -131,6 +131,7 @@
     <string name="newassignment">New Assignment</string>
     <string name="downloadpdf">download PDF</string>
     <string name="Deadline">Deadline: 12/12/2021</string>
+    <string name="text">Text</string>
 
 
     <string-array name="assignments">

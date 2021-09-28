@@ -28,7 +28,7 @@
         android:layout_marginTop="32dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/institute_name"
+        android:hint="@string/institute_name"
         android:textAlignment="center"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
