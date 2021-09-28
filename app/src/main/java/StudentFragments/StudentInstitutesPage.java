@@ -48,6 +48,8 @@ public class StudentInstitutesPage extends Fragment {
     FirebaseAuth fAuth=FirebaseAuth.getInstance();
 
 
+
+
     View myButton;
 
     @Override
@@ -183,10 +185,12 @@ public class StudentInstitutesPage extends Fragment {
 
                             }else{
                                 dialog2.dismiss();
-                                Toast.makeText(getActivity(), "Enrollment Key Invalid!", Toast.LENGTH_LONG).show();
+
                             }
                         }
-                        //
+                        //for
+
+
 
                     }
                 });
