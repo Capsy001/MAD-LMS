@@ -17,14 +17,14 @@ public class TeacherAnnouncementsView extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View myView = inflater.inflate(R.layout.fragment_student_announcements_view, container, false);
+        View myView = inflater.inflate(R.layout.fragment_teacher_announcements_view, container, false);
         Bundle bundle=getArguments();
         Announcement Announce1=(Announcement) bundle.getSerializable("selected_institute1");
 
-        TextView title = myView.findViewById(R.id.textView1111);
+        TextView title = myView.findViewById(R.id.textViewtitle);
         title.setText(Announce1.getTitle());
 
-        TextView description = myView.findViewById(R.id.textView15);
+        TextView description = myView.findViewById(R.id.textViewdescription);
         description.setText(Announce1.getDescription());
 
 

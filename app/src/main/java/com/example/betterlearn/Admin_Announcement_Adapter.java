@@ -1,11 +1,13 @@
 package com.example.betterlearn;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +18,8 @@ import java.util.ArrayList;
 
 import StudentFragments.StudentAnnouncements;
 import StudentFragments.StudentAnnouncementsView;
+import TeacherFragments.AdminAnnouncement;
+import TeacherFragments.TeacherAnnouncementsView;
 import models.Announcement;
 
 public class Admin_Announcement_Adapter extends ArrayAdapter<Announcement> {
@@ -58,11 +62,12 @@ public class Admin_Announcement_Adapter extends ArrayAdapter<Announcement> {
             public void onClick(View v) {
                 // on the item click on our list view.
                 // we are displaying a toast message.
+
                 Announcement selectedInstitute=(Announcement)v.getTag();
 
-                FragmentTransaction ft =  StudentAnnouncements.fragmentManager.beginTransaction();
+                FragmentTransaction ft =  AdminAnnouncement.fragmentManager.beginTransaction();
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                StudentAnnouncementsView fragment2 = new StudentAnnouncementsView();
+                TeacherAnnouncementsView fragment2 = new TeacherAnnouncementsView();
 
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("selected_institute1",selectedInstitute);
@@ -72,6 +77,8 @@ public class Admin_Announcement_Adapter extends ArrayAdapter<Announcement> {
                 ft.commit();
 
             }
+
+
         });
         return listitemView;
     }

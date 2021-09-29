@@ -36,7 +36,7 @@ import models.Announcement;
 
 
 public class AdminAnnouncement extends Fragment implements View.OnClickListener  {
-
+    public static FragmentManager fragmentManager;
     Button Add_announcement;
     TextView Add_announcement_text;
     GridView coursesGV;
@@ -54,7 +54,7 @@ public class AdminAnnouncement extends Fragment implements View.OnClickListener 
         // Inflate the layout for this fragment
         Add_announcement = (Button) myView.findViewById(R.id.add_announcement);
 
-
+        fragmentManager=getFragmentManager();
         Add_announcement.setOnClickListener(this);
 
 
