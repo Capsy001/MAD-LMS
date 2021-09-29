@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import models.Announcement;
+import models.Institute;
 
 
 public class StudentAnnouncementsView extends Fragment {
@@ -32,6 +34,9 @@ public class StudentAnnouncementsView extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View myView = inflater.inflate(R.layout.fragment_student_announcements_view, container, false);
+        Bundle bundle=getArguments();
+        Announcement Announce1=(Announcement) bundle.getSerializable("selected_institute");
+
 
 
         return myView;

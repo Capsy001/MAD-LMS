@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -31,6 +32,7 @@ import models.Announcement;
 
 
 public class StudentAnnouncements extends Fragment  {
+    public static FragmentManager fragmentManager;
     GridView coursesGV;
     ArrayList<Announcement> dataModalArrayList;
     FirebaseFirestore db;
@@ -45,7 +47,7 @@ public class StudentAnnouncements extends Fragment  {
         dataModalArrayList = new ArrayList<>();
 
 
-
+        fragmentManager=getFragmentManager();
 
         // initializing our variable for firebase
         // firestore and getting its instance.
