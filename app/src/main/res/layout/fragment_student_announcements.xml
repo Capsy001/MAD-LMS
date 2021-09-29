@@ -5,8 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="StudentFragments.StudentAnnouncements"
->
+    tools:context="StudentFragments.StudentAnnouncements">
 
     <TextView
         android:id="@+id/textView10"
@@ -25,10 +24,10 @@
         android:layout_width="fill_parent"
         android:layout_height="31dp"
         android:layout_marginTop="28dp"
+        android:background="@drawable/round_border"
         android:entries="@array/institutes"
         android:gravity="center"
         android:textAlignment="center"
-        android:background="@drawable/round_border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,13 +37,19 @@
     <GridView
         android:id="@+id/std_announcemets_sec"
 
-        android:layout_width="400dp"
-        android:layout_height="421dp"
+
+        android:layout_width="378dp"
+
+        android:layout_height="478dp"
         android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
+        android:background="@drawable/listview_background"
+
+
         android:columnWidth="50dp"
         android:gravity="center"
         android:numColumns="1"
@@ -52,15 +57,15 @@
         android:paddingLeft="10px"
         android:paddingTop="10px"
         android:paddingRight="10px"
+
         android:paddingBottom="10px"
         android:scrollbars="horizontal"
         android:stretchMode="columnWidth"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner1123"
-        app:layout_constraintVertical_bias="0.454"
         app:layout_marginBaseline="10dp" />
 
 

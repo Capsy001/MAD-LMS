@@ -64,26 +64,29 @@ public class StudentMyCourses extends Fragment {
                     List<DocumentSnapshot> listDocument = task.getResult().getDocuments();
 
                     List<String> items=new ArrayList<String>() {};
-
+                    List<String> items_dup=new ArrayList<String>() {};
 
                     for(DocumentSnapshot document : listDocument){
 
                        String institute= document.get("institute").toString();
+                       items_dup.add(institute);
 
-                       for(String it : items){
-
-                            if(it != institute) {
-
-
-                                items.add(institute);
-                            }
-
-                       }// TODO: find a way to remove duplicate institute names in spinner
+                       // TODO: find a way to remove duplicate institute names in spinner
                         //////////////////////////////////////////////////////////////////
 
-
-
                     }
+
+                    for (String element : items_dup) {
+
+                        // If this element is not present in newList
+                        // then add it
+                        if (!items.contains(element)) {
+
+                            items.add(element);
+                        }
+                    }
+
+
 
                     Spinner institute_spinner= root.findViewById(R.id.institutesMC);
 
