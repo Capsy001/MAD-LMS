@@ -59,7 +59,7 @@ public class Announcement_Adapter extends ArrayAdapter<Announcement> {
             public void onClick(View v) {
                 // on the item click on our list view.
                 // we are displaying a toast message.
-                Toast.makeText(getContext(), "Item clicked is : " + dataModal.getTitle(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Item clicked ism : " + dataModal.getKey(), Toast.LENGTH_SHORT).show();
             }
         });
         return listitemView;

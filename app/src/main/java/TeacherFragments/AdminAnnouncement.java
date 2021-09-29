@@ -108,7 +108,9 @@ public class AdminAnnouncement extends Fragment implements View.OnClickListener 
                                 // after getting this list we are passing
                                 // that list to our object class.
                                 Announcement dataModal = d.toObject(Announcement.class);
-
+                                dataModal.setKey(d.getId());
+                                final String TAG = "MyActivity";
+                                Log.d(TAG,d.getId());
                                 // after getting data from Firebase
                                 // we are storing that data in our array list
                                 dataModalArrayList.add(dataModal);

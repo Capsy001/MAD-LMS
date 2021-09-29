@@ -1,18 +1,24 @@
 package models;
 
+import com.google.firebase.database.Exclude;
+
 public class Announcement {
     // variables for storing our image and name.
     private String title;
     private String description;
+
+    @Exclude
+    private String key;
 
     public Announcement() {
         // empty constructor required for firebase.
     }
 
     // constructor for our object class.
-    public Announcement(String title, String description) {
+    public Announcement(String title, String description,String key) {
         this.title = title;
         this.description = description;
+        this.key = key;
     }
 
     // getter and setter methods
@@ -30,5 +36,13 @@ public class Announcement {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

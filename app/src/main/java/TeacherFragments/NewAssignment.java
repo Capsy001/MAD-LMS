@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,15 +17,20 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.betterlearn.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -32,9 +38,20 @@ import com.google.firebase.firestore.QuerySnapshot;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class NewAssignment extends Fragment {
+import models.Announcement;
+
+public class NewAssignment extends Fragment  implements View.OnClickListener  {
+
+    Button Add_announcement;
+    TextView Add_announcement_text;
+    GridView coursesGV;
+    ArrayList<Announcement> dataModalArrayList;
+    FirebaseFirestore db;
+    String userID;
 
     public static final String TAG="TAG";
     FirebaseAuth fAuth= FirebaseAuth.getInstance();
@@ -132,6 +149,61 @@ public class NewAssignment extends Fragment {
     }
 
 
+    @Override
+    public void onClick(View v){
+        //firebase Authentication initialize
+        fAuth=FirebaseAuth.getInstance();
+        //firestore databse initialize
+        fStore=FirebaseFirestore.getInstance();
+
+        EditText Title = (EditText) getView().findViewById(R.id.editTextTextPersonName3);
+        EditText Description = (EditText) getView().findViewById(R.id.editTextTextMultiLine3);
+        Spinner Institutes = (Spinner) getView().findViewById(R.id.institute);
+        Log.d(TAG, "newAnnouncement:" + Institutes.getSelectedItem().toString());
+
+        String rTitle=Title.getText().toString().trim();
+        String rDescription=Description.getText().toString();
+        String rCourse=Institutes.getSelectedItem().toString();
+
+        if(TextUtils.isEmpty(rTitle)){
+            Title.setError("Title should not be empty");
+            return;
+
+        }
+
+        if(TextUtils.isEmpty(rDescription)){
+            Title.setError("Title should not be empty");
+            return;
+
+        }else{
+            userID=fAuth.getCurrentUser().getUid();
+
+            //database document reference
+            DocumentReference documentReference= fStore.collection("Assigments").document();   //Collection="Assigments"
+
+            Map<String, Object> announce= new HashMap<>();
+            announce.put("title", rTitle);
+            announce.put("description", rDescription);
+            announce.put("Course", rCourse);
+            announce.put("user", userID);
+
+            documentReference.set(announce).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void unused) {
+                    Log.d(TAG, "User Assigment created for ");
+                    Title.getText().clear();
+                    Description.getText().clear();
+                    Toast.makeText(getActivity(), "Assigments Created", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.d(TAG, "OnFailure: "+e.toString());
+                    Toast.makeText(getActivity(), "Error!.", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
 
 
 
@@ -221,6 +293,7 @@ public class NewAssignment extends Fragment {
             }
         });
         //---Retrieve courses
+
 
 
     }

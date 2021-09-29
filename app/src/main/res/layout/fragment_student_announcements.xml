@@ -34,32 +34,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
+
     <GridView
         android:id="@+id/std_announcemets_sec"
-        android:numColumns="1"
-        android:columnWidth="50dp"
-        android:stretchMode="columnWidth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="421dp"
         android:layout_margin="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:scrollbars="vertical"
-        android:gravity="center_horizontal"
+        android:columnWidth="50dp"
+        android:gravity="center"
+        android:numColumns="1"
         android:padding="10px"
         android:paddingLeft="10px"
         android:paddingTop="10px"
         android:paddingRight="10px"
         android:paddingBottom="10px"
+        android:scrollbars="horizontal"
+        android:stretchMode="columnWidth"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner1123"
-        app:layout_constraintVertical_bias="0.041"
+        app:layout_constraintVertical_bias="0.454"
         app:layout_marginBaseline="10dp" />
 
 
