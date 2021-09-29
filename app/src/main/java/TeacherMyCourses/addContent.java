@@ -40,6 +40,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -64,6 +65,8 @@ public class addContent extends Fragment {
     String selected_institute;
     String selected_course;
     String content_id=null;
+
+    String generatedFilePath=null;
 
     Uri pdf=null;
 
@@ -341,7 +344,8 @@ public class addContent extends Fragment {
                     content.put("course", selected_course);
                     content.put("contentID", content_id);
                     content.put("type", "pdf");
-                    content.put("link_description", "null");
+                    content.put("link_description", "Download the File!");
+                    content.put("downloadURL", generatedFilePath);
 
                     addCourseDB.set(content).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
@@ -421,9 +425,10 @@ public class addContent extends Fragment {
                             content.put("description", descriptionString);
                             content.put("institute", selected_institute);
                             content.put("course", selected_course);
-                            content.put("contendID", cid);
+                            content.put("contentID", cid);
                             content.put("type", type);
                             content.put("link_description", link_desc);
+                            content.put("downloadURL", "notApplicable");
 
                             addCourseDB.set(content).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
@@ -615,29 +620,39 @@ public class addContent extends Fragment {
 
 
 
-            filepath.putFile(pdf).continueWithTask(new Continuation() {
+            filepath.putFile(pdf).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
-                public Object then(@NonNull Task task) throws Exception {
-                    if (!task.isSuccessful()) {
-                        throw task.getException();
-                    }
-                    return filepath.getDownloadUrl();
-                }
-            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                @Override
-                public void onComplete(@NonNull Task<Uri> task) {
-                    if (task.isSuccessful()) {
-                        // After uploading is done it progress
-                        // dialog box will be dismissed
-                        dialog3.dismiss();
-                        Uri uri = task.getResult();
-                        String myurl;
-                        myurl = uri.toString();
-                        Toast.makeText(getActivity(), "Uploaded Successfully", Toast.LENGTH_SHORT).show();
-                    } else {
-                        dialog3.dismiss();
-                        Toast.makeText(getActivity(), "UploadedFailed", Toast.LENGTH_SHORT).show();
-                    }
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+
+                    taskSnapshot.getStorage().getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                        @Override
+                        public void onComplete(@NonNull @NotNull Task<Uri> task) {
+                            generatedFilePath=task.getResult().toString();
+
+                            if (task.isSuccessful()) {
+
+
+                                // After uploading is done it progress
+                                // dialog box will be dismissed
+                                dialog3.dismiss();
+                                Uri uri = task.getResult();
+                                String myurl;
+                                myurl = uri.toString();
+                                Toast.makeText(getActivity(), "Uploaded Successfully", Toast.LENGTH_SHORT).show();
+                            } else {
+                                dialog3.dismiss();
+                                Toast.makeText(getActivity(), "UploadedFailed", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    });
+
+
+
+
+
+
                 }
             });
 

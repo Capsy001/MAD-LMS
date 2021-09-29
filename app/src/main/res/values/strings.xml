@@ -134,6 +134,16 @@
     <string name="downloadpdf">download PDF</string>
     <string name="Deadline">Deadline: 12/12/2021</string>
     <string name="text">Text</string>
+    <string name="downpdf">DOWNLOAD PDF</string>
+    <string name="gotolink">GO TO LINK</string>
+    <string name="link_desc">Link_description</string>
+    <string name="calulator">Calculator</string>
+    <string name="reset">reset</string>
+    <string name="average">Average</string>
+    <string name="sum">sum</string>
+    <string name="Sum" />
+    <string name="summ">Sum</string>
+    <string name="mode">Mode</string>
 
 
     <string-array name="assignments">

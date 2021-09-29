@@ -25,6 +25,7 @@ public class TabsTeacher extends Fragment implements View.OnClickListener {
     Button myButton1;
     Button myButton2;
     Button myButton3;
+    Button myButton4;
 
 
     public TabsTeacher() {
@@ -55,12 +56,13 @@ public class TabsTeacher extends Fragment implements View.OnClickListener {
         myButton1 = (Button) myView.findViewById(R.id.institutesT);
         myButton2 = (Button) myView.findViewById(R.id.announcementsT);
         myButton3 = (Button) myView.findViewById(R.id.assignmentsT);
+        myButton4 = (Button) myView.findViewById(R.id.calculatorTS);
 
         myButton.setOnClickListener(this);
         myButton1.setOnClickListener(this);
         myButton2.setOnClickListener(this);
         myButton3.setOnClickListener(this);
-
+        myButton4.setOnClickListener(this);
 
         return myView;
 
@@ -111,6 +113,16 @@ public class TabsTeacher extends Fragment implements View.OnClickListener {
             ft.commit();
 
         }
+
+        if(view==myButton4) {
+            fragment = new Calculator();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.defaultDashboard, fragment);
+            ft.commit();
+
+        }
+
 
     }
 }

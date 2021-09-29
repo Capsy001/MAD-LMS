@@ -8,15 +8,19 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.betterlearn.ContentAdapter;
+import com.example.betterlearn.ListAdapterInstitutes;
 import com.example.betterlearn.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -31,11 +35,18 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+import models.Content;
+import models.Institute;
+
 
 public class StudentMyCourses extends Fragment {
 
+    public static FragmentManager fragmentManager;
+
     FirebaseFirestore fStore=FirebaseFirestore.getInstance();
     FirebaseAuth fAuth=FirebaseAuth.getInstance();
+
+    public ArrayList<Content> contentArray=new ArrayList<Content>() {};//list of contents
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,6 +57,8 @@ public class StudentMyCourses extends Fragment {
         // Inflate the layout for this fragment
 
         View root= inflater.inflate(R.layout.fragment_student_my_courses, container, false);
+
+        fragmentManager=getFragmentManager();
 
         ProgressDialog dialog=new ProgressDialog(getActivity());
         dialog.setMessage("Loading . .");
@@ -158,6 +171,91 @@ public class StudentMyCourses extends Fragment {
 
                     }
                 });
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+
+
+
+
+        //get contents for selected course
+        Spinner courses_spinner= root.findViewById(R.id.coursesMC);
+
+        courses_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                contentArray.clear();
+                ContentAdapter listAdapterContent=new ContentAdapter(getActivity(),contentArray);
+                ListView listView=root.findViewById(R.id.listviewSMC);
+                listView.setAdapter(listAdapterContent);
+
+
+                String selected_inst=institute_spinner.getSelectedItem().toString();
+                String selected_crs=courses_spinner.getSelectedItem().toString();
+
+                CollectionReference contentReference=fStore.collection("content");
+
+                contentReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull @NotNull Task<QuerySnapshot> task) {
+
+                        if (task.isSuccessful()){
+
+                            contentArray.clear();
+                            List<DocumentSnapshot> listDocument = task.getResult().getDocuments();
+
+                            for(DocumentSnapshot document : listDocument){
+
+                                //getting content
+
+
+                                if(document.get("institute").toString().equals(selected_inst)
+                                && document.get("course").toString().equals(selected_crs)) {
+
+                                    String institute = document.get("institute").toString();
+                                    String course = document.get("course").toString();
+                                    String contentID = document.get("contentID").toString();
+                                    String description = document.get("description").toString();
+                                    String downloadURL = document.get("downloadURL").toString();
+                                    String link_description = document.get("link_description").toString();
+                                    String title = document.get("title").toString();
+                                    String type = document.get("type").toString();
+
+
+                                    Content newContent = new Content(contentID, course, description, institute, link_description, title, type, downloadURL);
+
+                                    contentArray.add(newContent);
+                                    //add all object items to a list
+
+                                    listviewAdd(root);
+
+                                }
+
+                            }
+
+
+
+
+                        }
+
+
+
+
+
+
+                    }
+                });
+
+
+
+
 
 
             }
@@ -169,9 +267,20 @@ public class StudentMyCourses extends Fragment {
         });
 
 
+
+
         return root;
     }
 
 
+    public void listviewAdd(View myView){
+
+
+        ContentAdapter listAdapterContent=new ContentAdapter(getActivity(),contentArray);
+        ListView listView=myView.findViewById(R.id.listviewSMC);
+        listView.setAdapter(listAdapterContent);
+
+
+    }
 
 }

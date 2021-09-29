@@ -60,6 +60,16 @@
                 android:text="@string/assignments"
                 android:textColor="@color/light_blue"
                 app:backgroundTint="@color/transparent" />
+
+            <Button
+                android:id="@+id/calculatorStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="@string/calulator"
+                android:textColor="@color/light_blue"
+                app:backgroundTint="@color/transparent" />
         </LinearLayout>
     </HorizontalScrollView>
 </FrameLayout>

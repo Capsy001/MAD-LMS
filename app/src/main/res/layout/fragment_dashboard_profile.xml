@@ -12,11 +12,12 @@
         android:layout_width="110dp"
         android:layout_height="107dp"
         android:layout_marginTop="24dp"
-        android:src="@mipmap/profile_picture"
+        android:src="@mipmap/logo_betterlearn_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/logo_betterlearn_foreground" />
 
     <TextView
         android:id="@+id/name_profile"
@@ -28,6 +29,7 @@
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="24sp"
+        android:elevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +44,7 @@
         android:text="@string/nullString"
         android:textColor="@color/black"
         android:textSize="20sp"
+        android:elevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +59,7 @@
         android:text="@string/nullString"
         android:textColor="@color/black"
         android:textSize="20sp"
+        android:elevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,37 +70,14 @@
         android:layout_width="319dp"
         android:layout_height="155dp"
         android:layout_marginTop="92dp"
-        android:background="@color/light_blue4"
+        android:background="@color/white"
+        android:elevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_profile" />
 
-    <View
-        android:id="@+id/view5"
-        android:layout_width="319dp"
-        android:layout_height="155dp"
-        android:layout_marginTop="23dp"
-        android:background="@color/light_blue4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view48" />
-
     <TextView
-        android:id="@+id/textView45"
-        android:layout_width="122dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="@string/courses"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view5" />
-
-    <TextView
-        android:id="@+id/textView40"
+        android:id="@+id/profile_inst_crs"
         android:layout_width="122dp"
         android:layout_height="32dp"
         android:layout_marginTop="12dp"
@@ -104,93 +85,52 @@
         android:text="@string/institutes"
         android:textColor="@color/black"
         android:textSize="24sp"
+        android:elevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view48" />
 
     <TextView
-        android:id="@+id/textView41"
+        android:id="@+id/prof1"
         android:layout_width="284dp"
         android:layout_height="21dp"
         android:layout_marginTop="16dp"
+        android:elevation="2dp"
         android:gravity="center"
-        android:text="@string/sliit"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView40" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_inst_crs" />
 
     <TextView
-        android:id="@+id/textView46"
-        android:layout_width="284dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="192dp"
-        android:gravity="center"
-        android:text="@string/dms"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView40" />
-
-    <TextView
-        android:id="@+id/textView43"
+        android:id="@+id/prof2"
         android:layout_width="284dp"
         android:layout_height="21dp"
         android:layout_marginTop="11dp"
+        android:elevation="2dp"
         android:gravity="center"
-        android:text="@string/nsbm"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView41" />
+        app:layout_constraintTop_toBottomOf="@+id/prof1" />
 
     <TextView
-        android:id="@+id/textView47"
-        android:layout_width="284dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="188dp"
-        android:gravity="center"
-        android:text="@string/cn"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView41" />
-
-    <TextView
-        android:id="@+id/textView48"
-        android:layout_width="284dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="220dp"
-        android:gravity="center"
-        android:text="@string/algo"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView41" />
-
-    <TextView
-        android:id="@+id/textView44"
+        android:id="@+id/prof3"
         android:layout_width="284dp"
         android:layout_height="21dp"
         android:layout_marginTop="8dp"
+        android:elevation="2dp"
         android:gravity="center"
-        android:text="@string/college"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView43" />
+        app:layout_constraintTop_toBottomOf="@+id/prof2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

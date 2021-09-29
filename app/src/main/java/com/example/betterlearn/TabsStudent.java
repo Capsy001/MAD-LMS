@@ -24,6 +24,7 @@ public class TabsStudent extends Fragment implements View.OnClickListener {
     Button myButton2;
     Button myButton3;
     Button myButton4;
+    Button myButton5;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -36,12 +37,14 @@ public class TabsStudent extends Fragment implements View.OnClickListener {
         myButton2 = (Button) myView.findViewById(R.id.institutesS);
         myButton3 = (Button) myView.findViewById(R.id.announcementsS);
         myButton4 = (Button) myView.findViewById(R.id.assignmentsS);
+        myButton5 = (Button) myView.findViewById(R.id.calculatorStudent);
 
         myButton.setOnClickListener(this);
         myButton1.setOnClickListener(this);
         myButton2.setOnClickListener(this);
         myButton3.setOnClickListener(this);
         myButton4.setOnClickListener(this);
+        myButton5.setOnClickListener(this);
 
         return myView;
 
@@ -101,6 +104,17 @@ public class TabsStudent extends Fragment implements View.OnClickListener {
             ft.replace(R.id.defaultDashboard, fragment);
             ft.commit();
         }
+
+        if(view==myButton5) {
+
+            fragment = new Calculator();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.defaultDashboard, fragment);
+            ft.commit();
+        }
+
+
         }
 
 

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,6 +51,10 @@ public class StudentDashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_dashboard);
 
+        ProgressDialog dialog=new ProgressDialog(this);
+        dialog.setMessage("Loading . .");
+        dialog.show();
+
         fAuth=FirebaseAuth.getInstance();
         fStore=FirebaseFirestore.getInstance();
 
@@ -88,6 +93,8 @@ public class StudentDashboard extends AppCompatActivity {
             }
         });
         //dddd
+
+        dialog.dismiss();
 
         Button logout=findViewById(R.id.logout_dashboard);
 
