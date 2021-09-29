@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Spinner;
@@ -18,11 +19,15 @@ import android.widget.Toast;
 
 import com.example.betterlearn.Announcement_Adapter;
 import com.example.betterlearn.R;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
@@ -55,8 +60,28 @@ public class StudentAnnouncements extends Fragment  {
         // here we are calling a method
         // to load data in our list view.
 
-        Spinner b = (Spinner) myView.findViewById(R.id.spinner1123);
         GridView gridview = (GridView) myView.findViewById(R.id.std_announcemets_sec);
+
+        CollectionReference subjectsRef = db.collection("institutes");
+        Spinner b = (Spinner) myView.findViewById(R.id.spinner1123);
+        List<String> subjects = new ArrayList<>();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, subjects);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        b.setAdapter(adapter);
+        subjectsRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        String subject = document.getString("InstituteName");
+                        subjects.add(subject);
+                    }
+                    adapter.notifyDataSetChanged();
+                }
+            }
+        });
+
+
         b.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView adapter, View v, int i, long lng) {
