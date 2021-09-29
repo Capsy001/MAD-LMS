@@ -8,10 +8,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.betterlearn.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import models.Announcement;
@@ -21,9 +25,10 @@ public class TeacherAnnouncementsEdit extends Fragment implements View.OnClickLi
     Button Update_announcement_done;
 
     private EditText AnnounceTitle, AnnounceDescript;
-
+    private EditText title, description;
     // creating a strings for storing our values from Edittext fields.
     private String rAnnounceTitle, rAnnounceDescript;
+    Announcement ancmnt2 = new Announcement();
 
     // creating a variable for firebasefirestore.
     private FirebaseFirestore db;
@@ -34,11 +39,11 @@ public class TeacherAnnouncementsEdit extends Fragment implements View.OnClickLi
         View myView = inflater.inflate(R.layout.fragment_edit_announcement, container, false);
         Bundle bundle=getArguments();
         Announcement Announce1=(Announcement) bundle.getSerializable("key");
-
-        EditText title = myView.findViewById(R.id.editTextTextPersonName3);
+        ancmnt2=Announce1;
+        title = myView.findViewById(R.id.editTextTextPersonName3);
         title.setText(Announce1.getTitle());
-
-        EditText description = myView.findViewById(R.id.editTextTextMultiLine3);
+        db = FirebaseFirestore.getInstance();
+        description = myView.findViewById(R.id.editTextTextMultiLine3);
         description.setText(Announce1.getDescription());
 
         AnnounceTitle = myView.findViewById(R.id.editTextTextPersonName3);
@@ -59,37 +64,37 @@ public class TeacherAnnouncementsEdit extends Fragment implements View.OnClickLi
         rAnnounceDescript = AnnounceDescript.getText().toString();
 
         // validating the text fields if empty or not.
-        if (TextUtils.isEmpty(courseName)) {
-            AnnounceTitle.setError("Please enter Course Name");
-        } else if (TextUtils.isEmpty(courseDescription)) {
-            AnnounceDescript.setError("Please enter Course Description");
+        if (TextUtils.isEmpty(rAnnounceTitle)) {
+            AnnounceTitle.setError("Please enter Announcement Title");
+        } else if (TextUtils.isEmpty(rAnnounceDescript)) {
+            AnnounceDescript.setError("Please enter Announcement Description");
         }else {
             // calling a method to update our course.
             // we are passing our object class, course name,
             // course description and course duration from our edittext field.
-            updateCourses(Announcement, rAnnounceTitle, rAnnounceDescript);
+            updateCourses(ancmnt2, rAnnounceTitle, rAnnounceDescript);
         }
 
     }
 
-    private void updateCourses(Announcement courses, String courseName, String courseDescription) {
+    private void updateCourses(Announcement announce, String title, String description) {
         // inside this method we are passing our updated values
         // inside our object class and later on we
         // will pass our whole object to firebase Firestore.
-        Courses updatedCourse = new Courses(courseName, courseDescription, courseDuration);
+        Announcement updateannunce = new Announcement(title, description,announce.getInstitutes(),announce.getUser());
 
         // after passing data to object class we are
         // sending it to firebase with specific document id.
         // below line is use to get the collection of our Firebase Firestore.
-        db.collection("Courses").
+        db.collection("announcements").
                 // below line is use toset the id of
                 // document where we have to perform
                 // update operation.
-                        document(courses.getId()).
+                        document(announce.getKey()).
 
                 // after setting our document id we are
                 // passing our whole object class to it.
-                        set(updatedCourse).
+                        set(updateannunce).
 
                 // after passing our object class we are
                 // calling a method for on success listener.
@@ -98,14 +103,21 @@ public class TeacherAnnouncementsEdit extends Fragment implements View.OnClickLi
                     public void onSuccess(Void aVoid) {
                         // on successful completion of this process
                         // we are displaying the toast message.
-                        Toast.makeText(UpdateCourse.this, "Course has been updated..", Toast.LENGTH_SHORT).show();
+                        AdminAnnouncement fragment2 = new AdminAnnouncement();
+
+                        getFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.defaultDashboard, fragment2)
+                                .commit();
+
+                        Toast.makeText(getActivity(), "Announcement has been updated..", Toast.LENGTH_SHORT).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             // inside on failure method we are
             // displaying a failure message.
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(UpdateCourse.this, "Fail to update the data..", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Fail to update the data..", Toast.LENGTH_SHORT).show();
             }
         });
     }
