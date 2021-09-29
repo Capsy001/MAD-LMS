@@ -16,6 +16,7 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.betterlearn.Admin_Announcement_Adapter;
 import com.example.betterlearn.Announcement_Adapter;
 import com.example.betterlearn.DashboardProfile;
 import com.example.betterlearn.R;
@@ -116,7 +117,7 @@ public class AdminAnnouncement extends Fragment implements View.OnClickListener 
                                 dataModalArrayList.add(dataModal);
                             }
                             // after that we are passing our array list to our adapter class.
-                            Announcement_Adapter adapter = new Announcement_Adapter(getActivity(), dataModalArrayList);
+                            Admin_Announcement_Adapter adapter = new Admin_Announcement_Adapter(getActivity(), dataModalArrayList);
 
                             // after passing this array list
                             // to our adapter class we are setting
