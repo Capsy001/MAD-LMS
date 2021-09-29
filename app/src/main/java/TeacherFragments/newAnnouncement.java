@@ -19,21 +19,31 @@ import android.widget.Toast;
 
 import com.example.betterlearn.R;
 import com.example.betterlearn.SignUp;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
 public class newAnnouncement extends Fragment implements View.OnClickListener {
 
     public static final String TAG="TAG";
-    FirebaseAuth fAuth;
-    FirebaseFirestore fStore;
+    FirebaseFirestore fStore=FirebaseFirestore.getInstance();
+    FirebaseAuth fAuth=FirebaseAuth.getInstance();
     String userID;
 
     @Override
@@ -43,13 +53,29 @@ public class newAnnouncement extends Fragment implements View.OnClickListener {
 
         View v =  inflater.inflate(R.layout.fragment_new_announcement, container, false);
 
-        Spinner spinner = (Spinner) v.findViewById(R.id.institute);
-        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this.getActivity(), R.array.institutes, R.layout.spinner_selected);
-        adapter1.setDropDownViewResource(R.layout.spinner_dropdown);
-        spinner.setAdapter(adapter1);
 
         Button b = (Button) v.findViewById(R.id.button6);
         b.setOnClickListener(this);
+
+        FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
+        CollectionReference subjectsRef = rootRef.collection("institutes");
+        Spinner spinner = (Spinner) v.findViewById(R.id.institute);
+        List<String> subjects = new ArrayList<>();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, subjects);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        subjectsRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        String subject = document.getString("InstituteName");
+                        subjects.add(subject);
+                    }
+                    adapter.notifyDataSetChanged();
+                }
+            }
+        });
 
         return v;
     }
@@ -57,10 +83,6 @@ public class newAnnouncement extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v){
-        //firebase Authentication initialize
-        fAuth=FirebaseAuth.getInstance();
-        //firestore databse initialize
-        fStore=FirebaseFirestore.getInstance();
 
         EditText Title = (EditText) getView().findViewById(R.id.editTextTextPersonName3);
         EditText Description = (EditText) getView().findViewById(R.id.editTextTextMultiLine3);
