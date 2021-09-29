@@ -6,11 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.betterlearn.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import StudentFragments.StudentInstitutes;
 import StudentFragments.StudentInstitutesPage;
@@ -20,7 +25,9 @@ import models.Institute;
 
 public class TeacherAnnouncementsView extends Fragment implements View.OnClickListener  {
     Button Update_announcement;
+    Button remove;
     Announcement ancmnt2 = new Announcement();
+    private FirebaseFirestore db;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,8 +42,12 @@ public class TeacherAnnouncementsView extends Fragment implements View.OnClickLi
         TextView description = myView.findViewById(R.id.textViewdescription);
         description.setText(Announce1.getDescription());
 
+        db = FirebaseFirestore.getInstance();
         Update_announcement = (Button) myView.findViewById(R.id.editbtn_annc);
         Update_announcement.setOnClickListener(this);
+
+        remove = (Button) myView.findViewById(R.id.dltbtn_annc);
+        remove.setOnClickListener(this);
 
         return myView;
 
@@ -44,16 +55,60 @@ public class TeacherAnnouncementsView extends Fragment implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("key",ancmnt2); // Put anything what you want
+        if (view==Update_announcement){
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("key",ancmnt2); // Put anything what you want
 
-        TeacherAnnouncementsEdit fragment2 = new TeacherAnnouncementsEdit();
-        fragment2.setArguments(bundle);
+            TeacherAnnouncementsEdit fragment2 = new TeacherAnnouncementsEdit();
+            fragment2.setArguments(bundle);
 
-        getFragmentManager()
-                .beginTransaction()
-                .replace(R.id.defaultDashboard, fragment2)
-                .commit();
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.defaultDashboard, fragment2)
+                    .commit();
+        }else if (view==remove){
+            deleteCourse(ancmnt2);
+        }
+
+    }
+
+    private void deleteCourse(Announcement announce) {
+        // below line is for getting the collection
+        // where we are storing our courses.
+        db.collection("announcements").
+                // after that we are getting the document
+                // which we have to delete.
+                        document(announce.getKey()).
+
+                // after passing the document id we are calling
+                // delete method to delete this document.
+                        delete().
+                // after deleting call on complete listener
+                // method to delete this data.
+                        addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        // inside on complete method we are checking
+                        // if the task is success or not.
+                        if (task.isSuccessful()) {
+                            // this method is called when the task is success
+                            // after deleting we are starting our MainActivity.
+                            Toast.makeText(getActivity(), "Course has been deleted from Databse.", Toast.LENGTH_SHORT).show();
+
+                            AdminAnnouncement fragment2 = new AdminAnnouncement();
+
+                            getFragmentManager()
+                                    .beginTransaction()
+                                    .replace(R.id.defaultDashboard, fragment2)
+                                    .commit();
+
+                        } else {
+                            // if the delete operation is failed
+                            // we are displaying a toast message.
+                            Toast.makeText(getActivity(), "Fail to delete the course. ", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 
 
