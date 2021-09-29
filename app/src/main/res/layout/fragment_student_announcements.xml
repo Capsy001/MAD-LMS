@@ -37,6 +37,7 @@
 
     <GridView
         android:id="@+id/std_announcemets_sec"
+
         android:layout_width="400dp"
         android:layout_height="421dp"
         android:layout_margin="10dp"
