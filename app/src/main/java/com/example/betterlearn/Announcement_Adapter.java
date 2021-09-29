@@ -61,7 +61,7 @@ public class Announcement_Adapter extends ArrayAdapter<Announcement> {
         // below line is use to set data to our text view.
         Titlelist.setText(dataModal.getTitle());
         Descriptionlist.setText(dataModal.getDescription());
-
+        listitemView.setTag(dataModal);
 
         // below line is use to add item
         // click listener for our item of list view.
@@ -77,13 +77,13 @@ public class Announcement_Adapter extends ArrayAdapter<Announcement> {
                 StudentAnnouncementsView fragment2 = new StudentAnnouncementsView();
 
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("selected_institute", (Serializable) selectedInstitute);
+                bundle.putSerializable("selected_institute1",selectedInstitute);
                 fragment2.setArguments(bundle);
                 ft.replace(R.id.defaultDashboard, fragment2);
                 ft.addToBackStack(null);
                 ft.commit();
 
-                Toast.makeText(getContext(), "Item clicked ism : " + dataModal.getKey(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Item clicked ism : " +selectedInstitute , Toast.LENGTH_SHORT).show();
             }
         });
         return listitemView;

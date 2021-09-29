@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -35,8 +36,13 @@ public class StudentAnnouncementsView extends Fragment {
                              Bundle savedInstanceState) {
         View myView = inflater.inflate(R.layout.fragment_student_announcements_view, container, false);
         Bundle bundle=getArguments();
-        Announcement Announce1=(Announcement) bundle.getSerializable("selected_institute");
+        Announcement Announce1=(Announcement) bundle.getSerializable("selected_institute1");
 
+        TextView title = myView.findViewById(R.id.textView1111);
+        title.setText(Announce1.getTitle());
+
+        TextView description = myView.findViewById(R.id.textView15);
+        description.setText(Announce1.getDescription());
 
 
         return myView;

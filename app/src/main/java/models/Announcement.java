@@ -2,7 +2,9 @@ package models;
 
 import com.google.firebase.database.Exclude;
 
-public class Announcement {
+import java.io.Serializable;
+
+public class Announcement  implements Serializable {
     // variables for storing our image and name.
     private String title;
     private String description;
