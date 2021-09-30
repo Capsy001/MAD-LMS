@@ -42,14 +42,16 @@ public class Assigment_Adapter extends ArrayAdapter<Assigments> {
         // our modal class.
         Assigments dataModal = getItem(position);
         // initializing our UI components of list view item.
-        TextView Titlelist = listitemView.findViewById(R.id.textView21_dup1);
-        TextView Descriptionlist = listitemView.findViewById(R.id.textView22_dup1);
+        TextView Titlelist = listitemView.findViewById(R.id.assign_title);
+        TextView Descriptionlist = listitemView.findViewById(R.id.assign_description);
+        TextView Deadlinelist = listitemView.findViewById(R.id.assign_deadline);
 
         // after initializing our items we are
         // setting data to our view.
         // below line is use to set data to our text view.
         Titlelist.setText(dataModal.getTitle());
         Descriptionlist.setText(dataModal.getDescription());
+        Deadlinelist.setText(dataModal.getDeadline());
         listitemView.setTag(dataModal);
 
         // below line is use to add item

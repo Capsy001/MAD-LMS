@@ -15,6 +15,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.example.betterlearn.Announcement_Adapter;
+import com.example.betterlearn.Assigment_Adapter;
 import com.example.betterlearn.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,13 +28,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import models.Announcement;
+import models.Assigments;
 
 
 public class AdminAssignments extends Fragment implements View.OnClickListener   {
 
     Button Add_assigmnt;
     GridView assigmnt;
-    ArrayList<Announcement> dataModalArrayList;
+    ArrayList<Assigments> dataModalArrayList;
     FirebaseFirestore db;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -50,7 +52,7 @@ public class AdminAssignments extends Fragment implements View.OnClickListener  
         Add_assigmnt.setOnClickListener(this);
 
 
-        assigmnt = myView.findViewById(R.id.admin_announcemets_sec);
+        assigmnt = myView.findViewById(R.id.admin_assignment_sec);
         dataModalArrayList = new ArrayList<>();
 
         // initializing our variable for firebase
@@ -101,14 +103,14 @@ public class AdminAssignments extends Fragment implements View.OnClickListener  
 
                                 // after getting this list we are passing
                                 // that list to our object class.
-                                Announcement dataModal = d.toObject(Announcement.class);
+                                Assigments dataModal = d.toObject(Assigments.class);
 
                                 // after getting data from Firebase
                                 // we are storing that data in our array list
                                 dataModalArrayList.add(dataModal);
                             }
                             // after that we are passing our array list to our adapter class.
-                            Announcement_Adapter adapter = new Announcement_Adapter(getActivity(), dataModalArrayList);
+                            Assigment_Adapter adapter = new Assigment_Adapter(getActivity(), dataModalArrayList);
 
                             // after passing this array list
                             // to our adapter class we are setting
