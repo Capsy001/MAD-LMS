@@ -137,6 +137,9 @@ public class NewAssignment extends Fragment  implements View.OnClickListener  {
         //---Retrieve institutes
         ///////////////////////////////////////////////////////////////
 
+        Button b = (Button) root.findViewById(R.id.button7);
+        b.setOnClickListener(this);
+
         return root;
 
     }
@@ -144,19 +147,18 @@ public class NewAssignment extends Fragment  implements View.OnClickListener  {
 
     @Override
     public void onClick(View v){
-        //firebase Authentication initialize
-        fAuth=FirebaseAuth.getInstance();
-        //firestore databse initialize
-        fStore=FirebaseFirestore.getInstance();
 
-        EditText Title = (EditText) getView().findViewById(R.id.editTextTextPersonName3);
-        EditText Description = (EditText) getView().findViewById(R.id.editTextTextMultiLine3);
-        Spinner Institutes = (Spinner) getView().findViewById(R.id.institute);
-        Log.d(TAG, "newAnnouncement:" + Institutes.getSelectedItem().toString());
+        EditText Title = (EditText) getView().findViewById(R.id.editTextTextPersonName);
+        EditText Description = (EditText) getView().findViewById(R.id.editTextTextMultiLine);
+        EditText Deadline = (EditText) getView().findViewById(R.id.editTextDate2);
+        Spinner Institutes = (Spinner) getView().findViewById(R.id.spinnerASS);
+        Spinner Course = (Spinner) getView().findViewById(R.id.spinner2ASS);
 
         String rTitle=Title.getText().toString().trim();
         String rDescription=Description.getText().toString();
-        String rCourse=Institutes.getSelectedItem().toString();
+        String rDeadline=Deadline.getText().toString();
+        String rInstitutes=Institutes.getSelectedItem().toString();
+        String rCourse=Course.getSelectedItem().toString();
 
         if(TextUtils.isEmpty(rTitle)){
             Title.setError("Title should not be empty");
@@ -165,7 +167,22 @@ public class NewAssignment extends Fragment  implements View.OnClickListener  {
         }
 
         if(TextUtils.isEmpty(rDescription)){
-            Title.setError("Title should not be empty");
+            Description.setError("Description should not be empty");
+            return;
+
+        }
+        if(TextUtils.isEmpty(rDeadline)){
+            Deadline.setError("Deadline should not be empty");
+            return;
+
+        }
+        if(TextUtils.isEmpty(rInstitutes)){
+            Deadline.setError("Deadline should not be empty");
+            return;
+
+        }
+        if(TextUtils.isEmpty(rCourse)){
+            Deadline.setError("Deadline should not be empty");
             return;
 
         }else{
@@ -177,7 +194,9 @@ public class NewAssignment extends Fragment  implements View.OnClickListener  {
             Map<String, Object> announce= new HashMap<>();
             announce.put("title", rTitle);
             announce.put("description", rDescription);
-            announce.put("Course", rCourse);
+            announce.put("deadline", rDeadline);
+            announce.put("course", rCourse);
+            announce.put("institute", rInstitutes);
             announce.put("user", userID);
 
             documentReference.set(announce).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -186,6 +205,7 @@ public class NewAssignment extends Fragment  implements View.OnClickListener  {
                     Log.d(TAG, "User Assigment created for ");
                     Title.getText().clear();
                     Description.getText().clear();
+                    Deadline.getText().clear();
                     Toast.makeText(getActivity(), "Assigments Created", Toast.LENGTH_SHORT).show();
                 }
             }).addOnFailureListener(new OnFailureListener() {
@@ -199,96 +219,4 @@ public class NewAssignment extends Fragment  implements View.OnClickListener  {
     }
 
 
-
-
-
-    ///-----------------------------------------------------------
-    //Custom function to setup second spinner
-    private void secondSpinner(View root) {
-
-        //Database collection reference 2
-        CollectionReference collectionReference2= fStore.collection("courses");
-
-        //Retrieve courses
-        collectionReference2.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull @NotNull Task<QuerySnapshot> task) {
-
-                if(task.isSuccessful()){
-
-                    List<DocumentSnapshot> listDocument2 = task.getResult().getDocuments();
-
-                    List<String> items2=new ArrayList<String>() {};
-                    for(DocumentSnapshot document : listDocument2){
-
-                        if(selected_institute.equals(document.get("institute"))) {
-
-
-
-                            String course = document.get("coursename").toString();
-                            items2.add(course);
-                            //getting data to insert into spinner
-
-                        }
-
-
-                    }
-
-                    if(items2.isEmpty())
-                    {
-                        //alert box
-                        new AlertDialog.Builder(getActivity())
-                                .setTitle("No Courses!")
-                                .setMessage("Selected institute has no Courses. Add some Courses!")
-                                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-
-                                    }
-                                })
-
-                                // A null listener allows the button to dismiss the dialog and take no further action.
-                                .setIcon(android.R.drawable.ic_dialog_alert)
-                                .show();
-                        //alert
-                    }
-
-                    //setting up the spinner
-                    Spinner courses=root.findViewById(R.id.spinner2ASS);
-
-                    ArrayAdapter itemsAdapter2 = new ArrayAdapter<String>(getActivity(), R.layout.spinner_selected, items2);//items3
-                    itemsAdapter2.setDropDownViewResource(R.layout.spinner_dropdown);
-
-
-                    courses.setAdapter(itemsAdapter2);
-                    dialog2.dismiss();
-
-
-
-                    //set selected listener
-                    courses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-
-                            //get selected spinner item
-                            selected_course=courses.getSelectedItem().toString();
-                            Toast.makeText(getActivity(), selected_course+" selected!" , Toast.LENGTH_SHORT).show();
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> adapterView) {
-
-                        }
-                    });
-                }else {
-                    Log.d(TAG, "Error getting documents: ", task.getException());
-                }
-            }
-        });
-        //---Retrieve courses
-
-
-
-    }
-    ///-----------------------------------------------------------
 }
