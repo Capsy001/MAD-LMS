@@ -69,7 +69,7 @@ public class AdminAssignments extends Fragment implements View.OnClickListener  
 
 
 
-        fragment = new newAnnouncement();
+        fragment = new NewAssignment();
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.defaultDashboard, fragment);

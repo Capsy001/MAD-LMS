@@ -33,6 +33,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import org.jetbrains.annotations.NotNull;
@@ -69,6 +70,10 @@ public class NewAssignment extends Fragment  implements View.OnClickListener  {
         // Inflate the layout for this fragment
         View root= inflater.inflate(R.layout.fragment_new_assignments, container, false);
 
+        fAuth= FirebaseAuth.getInstance();
+        //firestore databse initialize
+        fStore=FirebaseFirestore.getInstance();
+        userID=fAuth.getCurrentUser().getUid();
 
         ///////////////////////////////////////////////////////////////
         ProgressDialog dialog = new ProgressDialog(getActivity());
@@ -76,71 +81,59 @@ public class NewAssignment extends Fragment  implements View.OnClickListener  {
         dialog.show();
 
 
-        //getting institute list from the database
-        String userID= fAuth.getCurrentUser().getUid();
-
-        //Database collection reference
-        CollectionReference collectionReference= fStore.collection("institutes");
-
-        //Retrieve institutes
-        collectionReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        CollectionReference subjectsRef = fStore.collection("institutes");
+        Spinner spinner = (Spinner) root.findViewById(R.id.spinnerASS);
+        List<String> subjects = new ArrayList<>();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, subjects);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        subjectsRef.whereEqualTo("UserID", userID).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
-            public void onComplete(@NonNull @NotNull Task<QuerySnapshot> task) {
-
-                if(task.isSuccessful()){
-                    List<DocumentSnapshot> listDocument = task.getResult().getDocuments();
-
-                    List<String> items=new ArrayList<String>() {};
-                    for(DocumentSnapshot document : listDocument){
-
-                        //selecting user's institutes
-                        if(document.get("UserID").toString().equals(userID)) {
-
-                            String institute = document.get("InstituteName").toString();
-                            items.add(institute);
-                            //getting data to insert into spinner
-
-                        }
-
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        String subject = document.getString("InstituteName");
+                        subjects.add(subject);
                     }
-
-                    //setting up the spinner
-                    Spinner institutes=root.findViewById(R.id.spinnerASS);
-
-                    ArrayAdapter itemsAdapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner_selected, items);
-                    itemsAdapter.setDropDownViewResource(R.layout.spinner_dropdown);
-
-
-                    institutes.setAdapter(itemsAdapter);
-
-                    dialog.dismiss();
-
-                    //set selected listener
-                    institutes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                            dialog2 = new ProgressDialog(getActivity());
-                            dialog2.setMessage("Loading..");
-                            dialog2.show();
-
-                            //get selected spinner item
-                            selected_institute=institutes.getSelectedItem().toString();
-                            Toast.makeText(getActivity(), selected_institute+" selected!" , Toast.LENGTH_SHORT).show();
-
-                            secondSpinner(root);
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> adapterView) {
-
-                        }
-                    });
-                }else {
-                    Log.d(TAG, "Error getting documents: ", task.getException());
+                    adapter.notifyDataSetChanged();
                 }
             }
         });
+
+        dialog.dismiss();
+
+        Spinner institute_spinner= root.findViewById(R.id.spinnerASS);
+        institute_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String selected=institute_spinner.getSelectedItem().toString();
+
+                CollectionReference subjectsRef = fStore.collection("courses");
+                Spinner spinner = (Spinner) root.findViewById(R.id.spinner2ASS);
+                List<String> subjects = new ArrayList<>();
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, subjects);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(adapter);
+                subjectsRef.whereEqualTo("institute", selected).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                String subject = document.getString("coursename");
+                                subjects.add(subject);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                });
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         //---Retrieve institutes
         ///////////////////////////////////////////////////////////////
 
