@@ -99,8 +99,7 @@ public class AdminSubmission extends Fragment implements View.OnClickListener   
         fStore=FirebaseFirestore.getInstance();
         userID=fAuth.getCurrentUser().getUid();
 
-        CollectionReference collectionReference=fStore.collection("Submission")
-                .document(fAuth.getCurrentUser().getUid()).collection("Assigments");
+        CollectionReference collectionReference=fStore.collection("Submission");
 
         collectionReference.whereEqualTo("course",Submission2.getCourse()).whereEqualTo("institutes", Submission2.getInstitutes()).get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {

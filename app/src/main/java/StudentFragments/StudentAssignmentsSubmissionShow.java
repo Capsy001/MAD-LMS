@@ -87,8 +87,7 @@ public class StudentAssignmentsSubmissionShow extends Fragment implements View.O
         if (TextUtils.isEmpty(rSubmissionLink)) {
             SubmissionLink.setError("Please enter Submission Link!.");
         }else{
-            DocumentReference documentReference= fStore.collection("Submission").document(fAuth.getCurrentUser().getUid()).collection("Assigments").document();   //Collection="Assigments"
-
+            DocumentReference documentReference= fStore.collection("Submission").document();
             Map<String, Object> assign= new HashMap<>();
             assign.put("user", userID);
             assign.put("owner", Assigments2.getUser());
