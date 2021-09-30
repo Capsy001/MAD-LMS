@@ -150,6 +150,12 @@
     <string name="summ">Sum</string>
     <string name="mode">Multiplication</string>
     <string name="grade">Grade</string>
+    <string name="Edit">Edit</string>
+    <string name="deleteinst">delete institute</string>
+    <string name="changeimg">change image</string>
+    <string name="deletecrs">Delete Course</string>
+    <string name="changekey" />
+    <string name="keyy">Edit Enrollment Key</string>
 
 
     <string-array name="assignments">

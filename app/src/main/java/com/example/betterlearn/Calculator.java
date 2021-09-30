@@ -263,9 +263,9 @@ public class Calculator extends Fragment implements View.OnClickListener {
                     // it means it is double
 
                     modes.add(value);
-                    Double result=getMode(modes);
+                    Double result=getMult(modes);
 
-                    Log.d("TAG","Mooooooooooooooooooooooode :"+result);
+                    Log.d("TAG","Mult :"+result);
 
                     result=Math.round(result*100.0)/100.0;
 
@@ -373,17 +373,19 @@ public class Calculator extends Fragment implements View.OnClickListener {
         return result;
     }
 
-    public Double getMode(ArrayList<Double> modes) {
+    public Double getMult(ArrayList<Double> modes) {
 
        // Toast.makeText(getActivity(), "last entered: "+modes.get(modes.size()-1), Toast.LENGTH_SHORT).show();
+            Double result;
 
-        Double mul=1.0;
+
+        result=1.0;
 
         for(Double x : modes){
-            mul*=x;
+            result*=x;
         }
 
-        return mul;
+            return result;
 
     }
 

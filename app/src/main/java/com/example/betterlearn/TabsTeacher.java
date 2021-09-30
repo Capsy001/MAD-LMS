@@ -14,6 +14,7 @@ import android.widget.Button;
 import TeacherFragments.AdminAnnouncement;
 import TeacherFragments.AdminAssignments;
 import TeacherFragments.AdminCourse;
+import TeacherFragments.TeacherEdit;
 
 
 public class TabsTeacher extends Fragment implements View.OnClickListener {
@@ -23,7 +24,7 @@ public class TabsTeacher extends Fragment implements View.OnClickListener {
     Button myButton2;
     Button myButton3;
     Button myButton4;
-
+    Button myButton5;
 
     public TabsTeacher() {
         // Required empty public constructor
@@ -54,12 +55,14 @@ public class TabsTeacher extends Fragment implements View.OnClickListener {
         myButton2 = (Button) myView.findViewById(R.id.announcementsT);
         myButton3 = (Button) myView.findViewById(R.id.assignmentsT);
         myButton4 = (Button) myView.findViewById(R.id.calculatorTS);
+        myButton5 = (Button) myView.findViewById(R.id.editT);
 
         myButton.setOnClickListener(this);
         myButton1.setOnClickListener(this);
         myButton2.setOnClickListener(this);
         myButton3.setOnClickListener(this);
         myButton4.setOnClickListener(this);
+        myButton5.setOnClickListener(this);
 
         return myView;
 
@@ -120,6 +123,15 @@ public class TabsTeacher extends Fragment implements View.OnClickListener {
 
         }
 
+        if(view==myButton5) {
+
+            fragment = new TeacherEdit();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.defaultDashboard, fragment);
+            ft.commit();
+
+        }
 
     }
 }

@@ -39,6 +39,15 @@
                 />
 
             <Button
+                android:id="@+id/editT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/light_blue"
+                app:backgroundTint="@color/transparent"
+                android:text="@string/Edit" />
+
+            <Button
                 android:id="@+id/announcementsT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
