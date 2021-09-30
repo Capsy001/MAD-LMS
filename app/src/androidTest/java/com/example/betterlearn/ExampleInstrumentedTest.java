@@ -62,16 +62,30 @@ public class ExampleInstrumentedTest {
         input.add(1.0);
         input.add(9.0);
         input.add(1.0);
-        input.add(8.0);
         input.add(9.0);
-        input.add(7.0);
+        input.add(9.0);
+        input.add(9.0);
         input.add(5.0);
         input.add(9.0);
-        input.add(2.0);
+        input.add(9.0);
 
         Double result=testCalculator.getMode(input);
 
-        assertEquals(1.0, result, 0);
+        assertEquals(9.0, result, 0);
+
+
+
+    }
+
+
+    @Test
+    public void testGrade(){
+
+        Double input=76.5;
+
+        String result=testCalculator.getGrade(input);
+
+        assertEquals("A-", result);
 
 
 

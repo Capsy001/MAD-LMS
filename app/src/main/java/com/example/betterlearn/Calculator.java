@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,7 @@ public class Calculator extends Fragment implements View.OnClickListener {
     ArrayList<Double> averages=new ArrayList<Double>();
     ArrayList<Double> sums=new ArrayList<Double>();
     ArrayList<Double> modes=new ArrayList<Double>();
-    ArrayList<Double> lasts=new ArrayList<Double>();
+    Double grade=null;
 
 
     EditText averageEdit;
@@ -37,6 +38,11 @@ public class Calculator extends Fragment implements View.OnClickListener {
     Button modeAdd;
     Button modeRst;
     TextView modeDisp;
+
+    EditText gradeEdit;
+    Button gradeAdd;
+    Button gradeRst;
+    TextView gradeDisp;
 
     public Calculator() {
         // Required empty public constructor
@@ -58,7 +64,6 @@ public class Calculator extends Fragment implements View.OnClickListener {
         averages.clear();
         sums.clear();
         modes.clear();
-        lasts.clear();
 
 
 
@@ -91,7 +96,7 @@ public class Calculator extends Fragment implements View.OnClickListener {
 
 
 
-        //Average
+        //Mode
         modeEdit=root.findViewById(R.id.editMode);
         modeAdd=root.findViewById(R.id.addMode);
         modeRst=root.findViewById(R.id.resetMode);
@@ -103,6 +108,20 @@ public class Calculator extends Fragment implements View.OnClickListener {
 
         modeAdd.setOnClickListener(this);
         modeRst.setOnClickListener(this);
+
+
+        //Grade
+        gradeEdit=root.findViewById(R.id.editLast);
+        gradeAdd=root.findViewById(R.id.addLast);
+        gradeRst=root.findViewById(R.id.resetLast);
+        gradeDisp=root.findViewById(R.id.displayLast);
+
+        gradeEdit.setText("");
+        gradeDisp.setText("0");
+
+
+        gradeAdd.setOnClickListener(this);
+        gradeRst.setOnClickListener(this);
 
 
        return root;
@@ -135,6 +154,12 @@ public class Calculator extends Fragment implements View.OnClickListener {
 
         if(view==averageAdd){
 
+            if(averageEdit.getText().toString().isEmpty()){
+                Toast.makeText(getActivity(), "Empty input!", Toast.LENGTH_SHORT).show();
+                return;
+
+            }
+
             double value;
             String text =averageEdit.getText().toString();
             if(!text.isEmpty())
@@ -145,6 +170,8 @@ public class Calculator extends Fragment implements View.OnClickListener {
 
                     averages.add(value);
                     Double result=getAverage(averages);
+
+                    result=Math.round(result*100.0)/100.0;
 
                     averageDisp.setText(Double.toString(result));
                     averageEdit.setText("");
@@ -174,6 +201,12 @@ public class Calculator extends Fragment implements View.OnClickListener {
 
         //sum function
         if(view==sumAdd){
+
+            if(sumEdit.getText().toString().isEmpty()){
+                Toast.makeText(getActivity(), "Empty input!", Toast.LENGTH_SHORT).show();
+                return;
+
+            }
 
             double value;
             String text =sumEdit.getText().toString();
@@ -215,6 +248,12 @@ public class Calculator extends Fragment implements View.OnClickListener {
 
         if(view==modeAdd){
 
+            if(modeEdit.getText().toString().isEmpty()){
+                Toast.makeText(getActivity(), "Empty input!", Toast.LENGTH_SHORT).show();
+                return;
+
+            }
+
             double value;
             String text =modeEdit.getText().toString();
             if(!text.isEmpty())
@@ -226,6 +265,10 @@ public class Calculator extends Fragment implements View.OnClickListener {
                     modes.add(value);
                     Double result=getMode(modes);
 
+                    Log.d("TAG","Mooooooooooooooooooooooode :"+result);
+
+                    result=Math.round(result*100.0)/100.0;
+
                     modeDisp.setText(Double.toString(result));
                     modeEdit.setText("");
 
@@ -235,8 +278,6 @@ public class Calculator extends Fragment implements View.OnClickListener {
                     e1.printStackTrace();
                     Toast.makeText(getActivity(), "Invalid input!", Toast.LENGTH_SHORT).show();
                 }
-
-
 
 
         }
@@ -252,34 +293,112 @@ public class Calculator extends Fragment implements View.OnClickListener {
 
 
 
+        //Grade function
+        if(view==gradeAdd){
 
+            if(gradeEdit.getText().toString().isEmpty()){
+                Toast.makeText(getActivity(), "Empty input!", Toast.LENGTH_SHORT).show();
+                return;
+
+            }
+
+            double value;
+            String text =gradeEdit.getText().toString();
+            if(!text.isEmpty())
+                try
+                {
+                    value= Double.parseDouble(text);
+                    // it means it is double
+
+                    grade=value;
+                    String result=getGrade(grade);
+
+                    gradeDisp.setText(result);
+                    gradeEdit.setText("");
+
+
+                } catch (Exception e1) {
+                    // this means it is not double
+                    e1.printStackTrace();
+                    Toast.makeText(getActivity(), "Invalid input!", Toast.LENGTH_SHORT).show();
+                }
+
+
+
+
+        }
+
+        if(view==gradeRst){
+
+            gradeEdit.setText("");
+            gradeDisp.setText("");
+
+        }
+
+
+
+
+    }
+
+    public String getGrade(Double grade) {
+        String result;
+
+        if(grade > 100 || grade<0){
+            result= "Invalid";
+        }
+        else if(grade >= 90 && grade<=100){
+            result= "A+";
+        }else if(grade < 90 && grade >= 80){
+            result= "A";
+        }else if(grade < 80 && grade >= 75){
+            result= "A-";
+        }else if(grade <75 && grade >= 70){
+            result= "B+";
+        }else if(grade < 70 && grade >= 65){
+            result= "B";
+        }else if(grade < 65 && grade >= 60){
+            result= "B-";
+        }else if(grade < 60 && grade >= 55){
+            result= "C+";
+        }else if(grade < 55 && grade >= 45){
+            result= "C";
+        }else {
+            result= "F";
+        }
+            //
+
+
+
+
+        return result;
     }
 
     public Double getMode(ArrayList<Double> modes) {
 
-        Double mode = modes.get(0);
+       // Toast.makeText(getActivity(), "last entered: "+modes.get(modes.size()-1), Toast.LENGTH_SHORT).show();
+
+        Double mode=null;
         int maxCount = 0;
 
-        for (int i = 0; i < modes.size(); i++) {
+        for(Double x : modes){
+            int count=0;
 
-            Double value = modes.get(i);
+            for(Double y : modes){
 
-            int count = 0;
-            for (int j = 0; j < modes.size(); j++) {
-                if (modes.get(j) == value) {
+                if(x==y){
                     count++;
                 }
-
-
-                if (count > maxCount) {
-                    mode = value;
-                    maxCount = count;
-                }
             }
+            if(count>=maxCount)
+            {
+                maxCount=count;
+                mode=x;
+            }
+
+
         }
 
             return mode;
-
 
     }
 

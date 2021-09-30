@@ -149,6 +149,7 @@
     <string name="Sum" />
     <string name="summ">Sum</string>
     <string name="mode">Mode</string>
+    <string name="grade">Grade</string>
 
 
     <string-array name="assignments">
