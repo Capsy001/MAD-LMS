@@ -208,6 +208,8 @@ public class StudentAssignments extends Fragment implements View.OnClickListener
         institute_spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView adapter123, View view, int i, long l) {
+                dataModalArrayList.clear();
+                assigmnt1.setAdapter(null);
                 Spinner Institutes = (Spinner) getView().findViewById(R.id.spinner4_std);
                 rInstitutes=Institutes.getSelectedItem().toString();
                 rInstitutes =  adapter123.getItemAtPosition(i).toString();
@@ -244,7 +246,7 @@ public class StudentAssignments extends Fragment implements View.OnClickListener
                                     assigmnt1.setAdapter(adapter123);
                                 } else {
                                     // if the snapshot is empty we are displaying a toast message.
-                                    Toast.makeText(getActivity(), "No Announcements in Database" + rInstitutes, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getActivity(), "No Assigments in Database" , Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }).addOnFailureListener(new OnFailureListener() {

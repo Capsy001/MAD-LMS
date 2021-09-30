@@ -14,6 +14,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
 
+import StudentFragments.StudentAssignments;
+import StudentFragments.StudentAssignmentsShow;
 import TeacherFragments.AdminAssignments;
 import TeacherFragments.TeacherAssigmentsView;
 import models.Assigments;
@@ -62,9 +64,9 @@ public class Assigment_Adapter extends ArrayAdapter<Assigments> {
                 // we are displaying a toast message.
                 Assigments selectedAssignmnt=(Assigments)v.getTag();
 
-                FragmentTransaction ft =  AdminAssignments.fragmentManager.beginTransaction();
+                FragmentTransaction ft =  StudentAssignments.fragmentManager.beginTransaction();
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                TeacherAssigmentsView fragment2 = new TeacherAssigmentsView();
+                StudentAssignmentsShow fragment2 = new StudentAssignmentsShow();
 
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("Show_Assigments",selectedAssignmnt);
