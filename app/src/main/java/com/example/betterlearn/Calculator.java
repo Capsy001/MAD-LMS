@@ -377,28 +377,13 @@ public class Calculator extends Fragment implements View.OnClickListener {
 
        // Toast.makeText(getActivity(), "last entered: "+modes.get(modes.size()-1), Toast.LENGTH_SHORT).show();
 
-        Double mode=null;
-        int maxCount = 0;
+        Double mul=1.0;
 
         for(Double x : modes){
-            int count=0;
-
-            for(Double y : modes){
-
-                if(x==y){
-                    count++;
-                }
-            }
-            if(count>=maxCount)
-            {
-                maxCount=count;
-                mode=x;
-            }
-
-
+            mul*=x;
         }
 
-            return mode;
+        return mul;
 
     }
 

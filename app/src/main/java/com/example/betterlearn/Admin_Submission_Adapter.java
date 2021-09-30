@@ -21,7 +21,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 import java.util.Map;
 
+import StudentFragments.StudentSubmissionShow;
 import TeacherFragments.AdminAssignments;
+import TeacherFragments.AdminSubmission;
 import TeacherFragments.TeacherAssigmentsView;
 import models.Submission;
 
@@ -66,9 +68,9 @@ public class Admin_Submission_Adapter extends ArrayAdapter<Submission> {
                 // we are displaying a toast message.
                 Submission selectedAssignmnt=(Submission)v.getTag();
 
-                FragmentTransaction ft =  AdminAssignments.fragmentManager.beginTransaction();
+                FragmentTransaction ft =  AdminSubmission.fragmentManager.beginTransaction();
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                TeacherAssigmentsView fragment2 = new TeacherAssigmentsView();
+                StudentSubmissionShow fragment2 = new StudentSubmissionShow();
 
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("Show_Submission",selectedAssignmnt);
