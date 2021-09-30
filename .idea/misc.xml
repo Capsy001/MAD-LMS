@@ -13,11 +13,14 @@
         <entry key="..\:/Users/jayas/Documents/MAD-LMS/app/src/main/res/layout/admin_course.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/jayas/Documents/MAD-LMS/app/src/main/res/layout/announcements_items.xml" value="0.3625" />
         <entry key="..\:/Users/jayas/Documents/MAD-LMS/app/src/main/res/layout/fragment_admin_announcement.xml" value="0.536" />
+        <entry key="..\:/Users/jayas/Documents/MAD-LMS/app/src/main/res/layout/fragment_admin_assigment.xml" value="0.2630208333333333" />
+        <entry key="..\:/Users/jayas/Documents/MAD-LMS/app/src/main/res/layout/fragment_admin_assignment.xml" value="0.1546875" />
         <entry key="..\:/Users/jayas/Documents/MAD-LMS/app/src/main/res/layout/fragment_admin_assignments.xml" value="0.20364583333333333" />
         <entry key="..\:/Users/jayas/Documents/MAD-LMS/app/src/main/res/layout/fragment_admin_assignments2.xml" value="0.3625" />
         <entry key="..\:/Users/jayas/Documents/MAD-LMS/app/src/main/res/layout/fragment_edit_announcement.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/jayas/Documents/MAD-LMS/app/src/main/res/layout/fragment_new_announcement.xml" value="0.3472222222222222" />
         <entry key="..\:/Users/jayas/Documents/MAD-LMS/app/src/main/res/layout/fragment_new_assignment.xml" value="0.265625" />
+        <entry key="..\:/Users/jayas/Documents/MAD-LMS/app/src/main/res/layout/fragment_new_assignment2.xml" value="0.30833333333333335" />
         <entry key="..\:/Users/jayas/Documents/MAD-LMS/app/src/main/res/layout/fragment_student_announcements.xml" value="0.265625" />
         <entry key="..\:/Users/jayas/Documents/MAD-LMS/app/src/main/res/layout/fragment_student_announcements_view.xml" value="0.4" />
         <entry key="..\:/Users/jayas/Documents/MAD-LMS/app/src/main/res/layout/fragment_student_assignment_show.xml" value="0.3625" />

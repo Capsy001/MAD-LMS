@@ -67,7 +67,7 @@ public class NewAssignment extends Fragment  implements View.OnClickListener  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root= inflater.inflate(R.layout.fragment_new_assignment, container, false);
+        View root= inflater.inflate(R.layout.fragment_new_assignments, container, false);
 
 
         ///////////////////////////////////////////////////////////////

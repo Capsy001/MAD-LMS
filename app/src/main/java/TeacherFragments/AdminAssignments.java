@@ -42,9 +42,9 @@ public class AdminAssignments extends Fragment implements View.OnClickListener  
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View myView = inflater.inflate(R.layout.fragment_admin_assignments, container, false);
+        View myView = inflater.inflate(R.layout.fragment_admin_assignment, container, false);
 
-        Add_assigmnt = (Button) myView.findViewById(R.id.btn_add_assigmnt);
+        Add_assigmnt = (Button) myView.findViewById(R.id.add_assignment);
 
 
         Add_assigmnt.setOnClickListener(this);

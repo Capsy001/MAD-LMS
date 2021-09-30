@@ -11,11 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import StudentFragments.StudentAnnouncements;
-import StudentFragments.StudentInstitutes;
-import StudentFragments.StudentMyCourses;
 import TeacherFragments.AdminAnnouncement;
-import TeacherFragments.AdminAssignments2;
+import TeacherFragments.AdminAssignments;
 import TeacherFragments.AdminCourse;
 
 
@@ -106,7 +103,7 @@ public class TabsTeacher extends Fragment implements View.OnClickListener {
         }
 
         if(view==myButton3) {
-            fragment = new AdminAssignments2();
+            fragment = new AdminAssignments();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.defaultDashboard, fragment);
