@@ -406,7 +406,7 @@ public class TeacherEdit extends Fragment implements View.OnClickListener {
                                     //Update URL
 
                                 CollectionReference itemsRef = fStore.collection("institutes");
-                                Query query = itemsRef.whereEqualTo("institutes", selected_institute)
+                                Query query = itemsRef.whereEqualTo("InstituteName", selected_institute)
                                         .whereEqualTo("UserID", fAuth.getCurrentUser().getUid().toString());
 
 
@@ -417,7 +417,15 @@ public class TeacherEdit extends Fragment implements View.OnClickListener {
                                             for (DocumentSnapshot document : task.getResult()) {
                                                 itemsRef.document(document.getId()).update("downloadURL", generatedFilePath);
 
+                                                ProgressDialog dial=new ProgressDialog(getActivity());
+                                                dial.setMessage("Loading . .");
+                                                dial.show();
+
                                                 Toast.makeText(getActivity(), "Update completed!",Toast.LENGTH_SHORT).show();
+
+                                                dial.dismiss();
+
+
                                             }
                                         } else {
                                             Log.d(TAG, "Error getting documents: ", task.getException());
