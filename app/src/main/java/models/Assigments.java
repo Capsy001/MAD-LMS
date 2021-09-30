@@ -27,13 +27,14 @@ public class Assigments implements Serializable {
         this.description = description;
     }
 
-    public Assigments(String title, String description, String institutes,String course,String deadline, String user) {
+    public Assigments(String title, String description, String institutes,String course,String deadline, String user, String key) {
         this.title = title;
         this.description = description;
         this.institutes = institutes;
         this.course = course;
         this.deadline = deadline;
         this.user = user;
+        this.key = key;
     }
 
     public String getTitle() {

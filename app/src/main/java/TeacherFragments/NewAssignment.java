@@ -196,7 +196,7 @@ public class NewAssignment extends Fragment  implements View.OnClickListener  {
             announce.put("description", rDescription);
             announce.put("deadline", rDeadline);
             announce.put("course", rCourse);
-            announce.put("institute", rInstitutes);
+            announce.put("institutes", rInstitutes);
             announce.put("user", userID);
 
             documentReference.set(announce).addOnSuccessListener(new OnSuccessListener<Void>() {

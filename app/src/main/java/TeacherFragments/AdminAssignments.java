@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,7 +104,7 @@ public class AdminAssignments extends Fragment implements View.OnClickListener  
                                 // after getting this list we are passing
                                 // that list to our object class.
                                 Assigments dataModal = d.toObject(Assigments.class);
-
+                                dataModal.setKey(d.getId());
                                 // after getting data from Firebase
                                 // we are storing that data in our array list
                                 dataModalArrayList.add(dataModal);

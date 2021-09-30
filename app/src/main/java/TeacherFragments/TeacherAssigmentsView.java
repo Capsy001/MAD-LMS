@@ -72,13 +72,13 @@ public class TeacherAssigmentsView extends Fragment implements View.OnClickListe
 
     }
 
-    private void deleteCourse(Assigments announce) {
+    private void deleteCourse(Assigments Assigment) {
         // below line is for getting the collection
         // where we are storing our courses.
-        db.collection("announcements").
+        db.collection("Assigments").
                 // after that we are getting the document
                 // which we have to delete.
-                        document(announce.getKey()).
+                        document(Assigment.getKey()).
 
                 // after passing the document id we are calling
                 // delete method to delete this document.
@@ -93,7 +93,7 @@ public class TeacherAssigmentsView extends Fragment implements View.OnClickListe
                         if (task.isSuccessful()) {
                             // this method is called when the task is success
                             // after deleting we are starting our MainActivity.
-                            Toast.makeText(getActivity(), "Course has been deleted from Databse.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Assigment has been deleted from Databse.", Toast.LENGTH_SHORT).show();
 
                             AdminAssignments fragment2 = new AdminAssignments();
 
@@ -105,7 +105,7 @@ public class TeacherAssigmentsView extends Fragment implements View.OnClickListe
                         } else {
                             // if the delete operation is failed
                             // we are displaying a toast message.
-                            Toast.makeText(getActivity(), "Fail to delete the course. ", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Fail to delete the Assigment. ", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
