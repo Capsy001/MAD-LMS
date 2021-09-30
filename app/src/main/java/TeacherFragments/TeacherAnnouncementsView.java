@@ -25,6 +25,7 @@ import models.Institute;
 
 public class TeacherAnnouncementsView extends Fragment implements View.OnClickListener  {
     Button Update_announcement;
+
     Button remove;
     Announcement ancmnt2 = new Announcement();
     private FirebaseFirestore db;
@@ -48,6 +49,8 @@ public class TeacherAnnouncementsView extends Fragment implements View.OnClickLi
 
         remove = (Button) myView.findViewById(R.id.dltbtn_annc);
         remove.setOnClickListener(this);
+
+
 
         return myView;
 

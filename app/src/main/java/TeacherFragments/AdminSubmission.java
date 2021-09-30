@@ -41,6 +41,7 @@ public class AdminSubmission extends Fragment implements View.OnClickListener   
     GridView submissin;
     ArrayList<Submission> dataModalArrayList;
     FirebaseFirestore db;
+    Assigments Submission2 = new Assigments();
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
@@ -51,6 +52,10 @@ public class AdminSubmission extends Fragment implements View.OnClickListener   
                              Bundle savedInstanceState) {
         View myView = inflater.inflate(R.layout.fragment_admin_submission, container, false);
 
+        Bundle bundle=getArguments();
+        Assigments Submission1=(Assigments) bundle.getSerializable("key");
+
+        Submission2 = Submission1;
         Add_assigmnt = (Button) myView.findViewById(R.id.add_assignment);
 
         fragmentManager=getFragmentManager();
@@ -97,7 +102,7 @@ public class AdminSubmission extends Fragment implements View.OnClickListener   
         CollectionReference collectionReference=fStore.collection("Submission")
                 .document(fAuth.getCurrentUser().getUid()).collection("Assigments");
 
-        collectionReference.get()
+        collectionReference.whereEqualTo("course",Submission2.getCourse()).whereEqualTo("institutes", Submission2.getInstitutes()).get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {

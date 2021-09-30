@@ -18,10 +18,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import models.Announcement;
 import models.Assigments;
+import models.Submission;
 
 
 public class TeacherAssigmentsView extends Fragment implements View.OnClickListener  {
     Button Update_assigments;
+    Button Show_submission;
     Button remove;
     Assigments Assigments2 = new Assigments();
     private FirebaseFirestore db;
@@ -49,6 +51,9 @@ public class TeacherAssigmentsView extends Fragment implements View.OnClickListe
         remove = (Button) myView.findViewById(R.id.dltbtn_assign);
         remove.setOnClickListener(this);
 
+        Show_submission = (Button) myView.findViewById(R.id.show_submissionbtn);
+        Show_submission.setOnClickListener(this);
+
         return myView;
 
     }
@@ -68,6 +73,17 @@ public class TeacherAssigmentsView extends Fragment implements View.OnClickListe
                     .commit();
         }else if (view==remove){
             deleteCourse(Assigments2);
+        }else if (view==Show_submission){
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("key",Assigments2); // Put anything what you want
+
+            AdminSubmission fragment2 = new AdminSubmission();
+            fragment2.setArguments(bundle);
+
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.defaultDashboard, fragment2)
+                    .commit();
         }
 
     }
