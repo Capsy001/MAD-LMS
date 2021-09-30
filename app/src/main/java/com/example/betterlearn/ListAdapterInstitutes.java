@@ -16,6 +16,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
 
 import java.util.ArrayList;
 
@@ -23,6 +25,7 @@ import StudentFragments.StudentDashboard;
 import StudentFragments.StudentInstitutes;
 import StudentFragments.StudentInstitutesPage;
 import models.Institute;
+
 
 public class ListAdapterInstitutes extends ArrayAdapter<Institute> {
 
@@ -89,6 +92,9 @@ public class ListAdapterInstitutes extends ArrayAdapter<Institute> {
                 .load(institute.getImage_url())
                 .centerCrop()
                 .into(img);
+
+
+
 
         return convertView;
     }

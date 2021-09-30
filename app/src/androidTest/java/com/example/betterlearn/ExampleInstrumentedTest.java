@@ -20,6 +20,7 @@ public class ExampleInstrumentedTest {
 
     @Before
     public void initialize() {
+
         this.testCalculator = new Calculator();
     }
 
@@ -54,24 +55,15 @@ public class ExampleInstrumentedTest {
 
 
     @Test
-    public void testMode(){
+    public void testMult(){
 
         ArrayList<Double> input=new ArrayList<Double>();
         input.add(1.0);
-        input.add(1.0);
-        input.add(1.0);
-        input.add(9.0);
-        input.add(1.0);
-        input.add(9.0);
-        input.add(9.0);
-        input.add(9.0);
         input.add(5.0);
-        input.add(9.0);
-        input.add(9.0);
 
-        Double result=testCalculator.getMode(input);
+        Double result=testCalculator.getMult(input);
 
-        assertEquals(9.0, result, 0);
+        assertEquals(5.0, result, 0);
 
 
 
