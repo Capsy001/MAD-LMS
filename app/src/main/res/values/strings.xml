@@ -97,6 +97,8 @@
     <string name="Update">Update</string>
     <string name="edit">Edit</string>
     <string name="remove">Remove</string>
+    <string name="sub_link">Submission Link</string>
+    <string name="up_sub">Please Upload Submissoin to the GoogleDrive and submit the link</string>
     <string name="add_assignment">Add New Assignment</string>
     <string name="deadline">Deadline</string>
     <string name="details">Details</string>
@@ -133,7 +135,7 @@
     <string name="all">all</string>
     <string name="selectpdf">select pdf</string>
     <string name="newassignment">New Assignment</string>
-    <string name="downloadpdf">download PDF</string>
+    <string name="downloadpdf">Submit Submission</string>
     <string name="Deadline">Deadline: 12/12/2021</string>
     <string name="text">Text</string>
     <string name="downpdf">DOWNLOAD PDF</string>

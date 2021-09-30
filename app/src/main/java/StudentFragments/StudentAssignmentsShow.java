@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.betterlearn.R;
 
+import TeacherFragments.TeacherAssigmentsEdit;
 import models.Assigments;
 
 
@@ -54,15 +55,18 @@ public class StudentAssignmentsShow extends Fragment implements View.OnClickList
     @Override
     public void onClick(View view) {
 
-        Fragment fragment;
-
         if(view==myButton) {
 
-            fragment = new StudentAssignmentsSubmissionShow();
-            FragmentManager fm = getFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.defaultDashboard, fragment);
-            ft.commit();
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("key",Assigments2); // Put anything what you want
+
+            StudentAssignmentsSubmissionShow fragment2 = new StudentAssignmentsSubmissionShow();
+            fragment2.setArguments(bundle);
+
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.defaultDashboard, fragment2)
+                    .commit();
         }
 
     }
