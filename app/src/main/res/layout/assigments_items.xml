@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/imageView13_dup1"
-        android:layout_width="75dp"
-        android:layout_height="92dp"
+        android:layout_width="83dp"
+        android:layout_height="115dp"
         android:layout_margin="10px"
         android:layout_marginLeft="10px"
         android:layout_marginTop="10px"
@@ -16,12 +16,12 @@
         android:layout_marginBottom="10px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
+        app:layout_constraintVertical_bias="0.0"
         app:layout_marginBaseline="10px"
-        app:srcCompat="@drawable/megaphone" />
+        app:srcCompat="@drawable/assignment" />
 
     <TextView
         android:id="@+id/assign_title"
@@ -33,10 +33,10 @@
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView13_dup1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464" />
+        app:layout_constraintVertical_bias="0.005" />
 
     <TextView
         android:id="@+id/assign_description"
@@ -60,7 +60,7 @@
         android:textColor="@color/design_default_color_on_secondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/assign_description"
         app:layout_constraintVertical_bias="0.0" />

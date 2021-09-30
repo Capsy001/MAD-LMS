@@ -44,11 +44,11 @@ public class Submission implements Serializable {
         this.course = course;
     }
 
-    public String getInstitute() {
+    public String getInstitutes() {
         return institutes;
     }
 
-    public void setInstitute(String institutes) {
+    public void setInstitutes(String institutes) {
         this.institutes = institutes;
     }
 
