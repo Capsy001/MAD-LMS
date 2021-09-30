@@ -76,11 +76,11 @@ public class Submission implements Serializable {
         this.key = key;
     }
 
-    public String getSubmission() {
+    public String getSubmissions() {
         return submissions;
     }
 
-    public void setSubmission(String submission) {
-        submissions = submissions;
+    public void setSubmissions(String submissions) {
+        this.submissions = submissions;
     }
 }

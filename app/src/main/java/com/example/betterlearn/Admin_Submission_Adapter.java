@@ -1,6 +1,7 @@
 package com.example.betterlearn;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +13,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.ArrayList;
+import java.util.Map;
 
 import TeacherFragments.AdminAssignments;
 import TeacherFragments.TeacherAssigmentsView;
-import models.Assigments;
 import models.Submission;
 
 public class Admin_Submission_Adapter extends ArrayAdapter<Submission> {
@@ -42,16 +48,15 @@ public class Admin_Submission_Adapter extends ArrayAdapter<Submission> {
         // our modal class.
         Submission dataModal = getItem(position);
         // initializing our UI components of list view item.
-        TextView Titlelist = listitemView.findViewById(R.id.assign_title_course);
-        TextView Descriptionlist = listitemView.findViewById(R.id.assign_description_user);
+        TextView Titlelist = listitemView.findViewById(R.id.sub_title_course);
+        TextView Descriptionlist = listitemView.findViewById(R.id.sub_description_user);
 
         // after initializing our items we are
         // setting data to our view.
         // below line is use to set data to our text view.
         Titlelist.setText(dataModal.getCourse());
-        Descriptionlist.setText(dataModal.getUser());
+        Descriptionlist.setText(dataModal.getSubmissions());
         listitemView.setTag(dataModal);
-
         // below line is use to add item
         // click listener for our item of list view.
         listitemView.setOnClickListener(new View.OnClickListener() {
@@ -75,5 +80,32 @@ public class Admin_Submission_Adapter extends ArrayAdapter<Submission> {
             }
         });
         return listitemView;
+    }
+
+    public String getuser(String UserId){
+        final String[] user1 = new String[1];
+        FirebaseFirestore db;
+        db = FirebaseFirestore.getInstance();
+
+        db.collection("users").document(UserId).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Map<String, Object> map = document.getData();
+                        for (Map.Entry<String, Object> entry : map.entrySet()) {
+                            if (entry.getKey().equals("name")) {
+
+                                user1[0] =entry.getValue().toString();
+                                Log.d("TAG", user1[0]);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        return user1[0];
     }
 }
