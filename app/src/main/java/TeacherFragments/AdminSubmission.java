@@ -1,13 +1,6 @@
 package TeacherFragments;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +8,21 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.example.betterlearn.Admin_Assigment_Adapter;
+import com.example.betterlearn.Admin_Submission_Adapter;
+import com.example.betterlearn.Announcement_Adapter;
 import com.example.betterlearn.R;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -27,14 +30,16 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+import models.Announcement;
 import models.Assigments;
+import models.Submission;
 
 
-public class AdminAssignments extends Fragment implements View.OnClickListener   {
+public class AdminSubmission extends Fragment implements View.OnClickListener   {
 
     Button Add_assigmnt;
-    GridView assigmnt;
-    ArrayList<Assigments> dataModalArrayList;
+    GridView submissin;
+    ArrayList<Submission> dataModalArrayList;
     FirebaseFirestore db;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -44,7 +49,7 @@ public class AdminAssignments extends Fragment implements View.OnClickListener  
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View myView = inflater.inflate(R.layout.fragment_admin_assignment, container, false);
+        View myView = inflater.inflate(R.layout.fragment_admin_submission, container, false);
 
         Add_assigmnt = (Button) myView.findViewById(R.id.add_assignment);
 
@@ -52,7 +57,7 @@ public class AdminAssignments extends Fragment implements View.OnClickListener  
         Add_assigmnt.setOnClickListener(this);
 
 
-        assigmnt = myView.findViewById(R.id.admin_assignment_sec);
+        submissin = myView.findViewById(R.id.admin_submission_sec);
         dataModalArrayList = new ArrayList<>();
 
         // initializing our variable for firebase
@@ -88,7 +93,11 @@ public class AdminAssignments extends Fragment implements View.OnClickListener  
         //firestore databse initialize
         fStore=FirebaseFirestore.getInstance();
         userID=fAuth.getCurrentUser().getUid();
-        db.collection("Assigments").whereEqualTo("user", userID).get()
+
+        CollectionReference collectionReference=fStore.collection("Submission")
+                .document(fAuth.getCurrentUser().getUid()).collection("Assigments");
+
+        collectionReference.get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -103,22 +112,22 @@ public class AdminAssignments extends Fragment implements View.OnClickListener  
 
                                 // after getting this list we are passing
                                 // that list to our object class.
-                                Assigments dataModal = d.toObject(Assigments.class);
-                                dataModal.setKey(d.getId());
+                                Submission dataModal = d.toObject(Submission.class);
+
                                 // after getting data from Firebase
                                 // we are storing that data in our array list
                                 dataModalArrayList.add(dataModal);
                             }
                             // after that we are passing our array list to our adapter class.
-                            Admin_Assigment_Adapter adapter = new Admin_Assigment_Adapter(getActivity(), dataModalArrayList);
+                            Admin_Submission_Adapter adapter = new Admin_Submission_Adapter(getActivity(), dataModalArrayList);
 
                             // after passing this array list
                             // to our adapter class we are setting
                             // our adapter to our list view.
-                            assigmnt.setAdapter(adapter);
+                            submissin.setAdapter(adapter);
                         } else {
                             // if the snapshot is empty we are displaying a toast message.
-                            Toast.makeText(getActivity(), "No Assigments in Database", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "No Submissions in Database", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {

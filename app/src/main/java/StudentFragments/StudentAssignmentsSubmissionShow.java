@@ -93,7 +93,8 @@ public class StudentAssignmentsSubmissionShow extends Fragment implements View.O
             assign.put("user", userID);
             assign.put("owner", Assigments2.getUser());
             assign.put("course", Assigments2.getCourse());
-            assign.put("institute", Assigments2.getInstitutes());
+            assign.put("institutes", Assigments2.getInstitutes());
+            assign.put("submissions", rSubmissionLink);
 
             documentReference.set(assign).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
@@ -110,24 +111,7 @@ public class StudentAssignmentsSubmissionShow extends Fragment implements View.O
 
     }
 
-    private void CheckSubmission(){
-        fStore=FirebaseFirestore.getInstance();
-        db.collection("Submission").get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        Toast.makeText(getActivity(), "rgrge", Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                // we are displaying a toast message
-                // when we get any error from Firebase.
-                Toast.makeText(getActivity(), "Fail to load data..", Toast.LENGTH_SHORT).show();
-            }
-        });
 
-    }
 }
 
 
