@@ -16,13 +16,15 @@ import java.util.ArrayList;
 
 import StudentFragments.StudentAnnouncements;
 import StudentFragments.StudentAnnouncementsView;
+import TeacherFragments.AdminAssignments;
+import TeacherFragments.TeacherAssigmentsView;
 import models.Announcement;
 import models.Assigments;
 
-public class Assigment_Adapter extends ArrayAdapter<Assigments> {
+public class Admin_Assigment_Adapter extends ArrayAdapter<Assigments> {
 
 
-    public Assigment_Adapter(@NonNull FragmentActivity context, ArrayList<Assigments> dataModalArrayList) {
+    public Admin_Assigment_Adapter(@NonNull FragmentActivity context, ArrayList<Assigments> dataModalArrayList) {
         super(context, 0, dataModalArrayList);
     }
 
@@ -61,14 +63,14 @@ public class Assigment_Adapter extends ArrayAdapter<Assigments> {
             public void onClick(View v) {
                 // on the item click on our list view.
                 // we are displaying a toast message.
-                Assigments selectedInstitute=(Assigments)v.getTag();
+                Assigments selectedAssignmnt=(Assigments)v.getTag();
 
-                FragmentTransaction ft =  StudentAnnouncements.fragmentManager.beginTransaction();
+                FragmentTransaction ft =  AdminAssignments.fragmentManager.beginTransaction();
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                StudentAnnouncementsView fragment2 = new StudentAnnouncementsView();
+                TeacherAssigmentsView fragment2 = new TeacherAssigmentsView();
 
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("selected_institute1",selectedInstitute);
+                bundle.putSerializable("Show_Assigments",selectedAssignmnt);
                 fragment2.setArguments(bundle);
                 ft.replace(R.id.defaultDashboard, fragment2);
                 ft.addToBackStack(null);

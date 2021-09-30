@@ -14,8 +14,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import com.example.betterlearn.Announcement_Adapter;
-import com.example.betterlearn.Assigment_Adapter;
+import com.example.betterlearn.Admin_Assigment_Adapter;
 import com.example.betterlearn.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,7 +26,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-import models.Announcement;
 import models.Assigments;
 
 
@@ -40,6 +38,7 @@ public class AdminAssignments extends Fragment implements View.OnClickListener  
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
+    public static FragmentManager fragmentManager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,7 +47,7 @@ public class AdminAssignments extends Fragment implements View.OnClickListener  
 
         Add_assigmnt = (Button) myView.findViewById(R.id.add_assignment);
 
-
+        fragmentManager=getFragmentManager();
         Add_assigmnt.setOnClickListener(this);
 
 
@@ -110,7 +109,7 @@ public class AdminAssignments extends Fragment implements View.OnClickListener  
                                 dataModalArrayList.add(dataModal);
                             }
                             // after that we are passing our array list to our adapter class.
-                            Assigment_Adapter adapter = new Assigment_Adapter(getActivity(), dataModalArrayList);
+                            Admin_Assigment_Adapter adapter = new Admin_Assigment_Adapter(getActivity(), dataModalArrayList);
 
                             // after passing this array list
                             // to our adapter class we are setting

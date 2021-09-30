@@ -95,6 +95,8 @@
     <string name="add_annocement">Add New Announcement</string>
     <string name="edit_annocement">Update Announcement</string>
     <string name="Update">Update</string>
+    <string name="edit">Edit</string>
+    <string name="remove">Remove</string>
     <string name="add_assignment">Add New Assignment</string>
     <string name="deadline">Deadline</string>
     <string name="details">Details</string>
